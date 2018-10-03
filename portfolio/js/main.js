@@ -22,9 +22,9 @@ const quotes = [
 ]
 
 window.setTimeout(() => {
+    console.log("quote");
     var random = Math.round(Math.random() * quotes.length);
-    random = random < 5? random: 4;
+    random = random > 4? random: 4;
     var quote = quotes[random];
-    const quoteEl = document.querySelector(".quote h2");
-    quoteEl.innerHTML = quote;
-}, 10000);
+    document.querySelector(".quote h2").innerHTML = quote;
+}, 20000);
