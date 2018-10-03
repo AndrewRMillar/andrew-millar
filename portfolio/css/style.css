@@ -293,6 +293,10 @@ section.portfolio {
   padding: 2em;
   height: auto;
 }
+.img-container img {
+  height: 27vw;
+  min-height: 10em;
+}
 
 .img-container, .item-container .text-container {
   grid-row: 1/2;

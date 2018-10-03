@@ -44,14 +44,14 @@ section.forEach((el) => {
 });
 
 function scrollTo(el, direction) {
-    // Function takes in a DOM element adds a click event handler that
-    // scrolls the page to the correct place in the page, an element id
+    // Function takes in a DOM element adds a click event handler that when 
+    // clicked scrolls the page to the correct place in the page, an element id
     // Only side effects
 
     const parentId = el.parentNode.id;
     const id = direction == "up"? `#${ids[ids.indexOf(parentId)-1]}`: `#${ids[ids.indexOf(parentId)+1]}`;
     el.addEventListener("click", () => {
-        document.querySelector(id).scrollIntoView({behavior:"smooth"});
+        document.querySelector(id).scrollIntoView({behavior:"smooth", block: "start"});
     })
 }
 
