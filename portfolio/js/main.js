@@ -1,16 +1,14 @@
 // paralax effect from scratch, for fun
 window.addEventListener("scroll", () => {
     // get the scroll amount and move the backgroung image by a fraction of that amount
+
     let scrollFraq = window.scrollY / 4;
     const header = document.querySelector("header");
-    // console.log(`0, ${scrollFraq}px`);
     header.style.backgoundPositionY = `0, ${scrollFraq}px`;   
-    // console.log(header.style.backgroundPositionY);
 
     // console.log(window.innerHeight,window.scrollY);
     if(window.innerHeight/window.scrollY < 3) {
         // console.log("done");
-        
         document.body.classList.add("scrolled");
     }
 });
@@ -29,5 +27,4 @@ window.setTimeout(() => {
     var quote = quotes[random];
     const quoteEl = document.querySelector(".quote h2");
     quoteEl.innerHTML = quote;
-    // console.log(random);
 }, 10000);
