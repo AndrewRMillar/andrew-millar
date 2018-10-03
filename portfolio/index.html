@@ -13,26 +13,25 @@
 <body>
 
   <!--  
-Create one page website
 TODO: Add content
 TODO: Add down button in header leading to the first element of the page (about)
 TODO: Add a next button taking the user to the next part of the page
 TODO: Have internal links take user to relavent place on the page
 TODO: Make site responsive
 TODO: Add assesibility features to the website
-
+TODO: 
 -->
 
-  <header>
+  <header id="top">
     <div class="face">
       <img src="https://millar-knorr.nl/face.png" alt="My Face">
     </div>
     <h1>Andrew Millar</h1>
     <h2>Webdevelopment</h2>
     <p>
-      Ik vind webontwikkeling supper kek Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore similique, debitis eligendi voluptate dolor nisi dicta ipsum veritatis, hic quos sed quia. Maiores porro corporis tempora numquam asperiores reprehenderit officia?
+      Ik vind webontwikkeling supper kek, bla die blah Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore similique, debitis eligendi voluptate dolor nisi dicta ipsum veritatis, hic quos sed quia. Maiores porro corporis tempora numquam asperiores reprehenderit officia?
     </p>
-    <button><i class="far fa-arrow-alt-circle-down"></i></button>
+    <a class="next button"><i class="far fa-arrow-alt-circle-down"></i></a>
     <div class="social">
       <ul>
         <li><a href="https://github.com/Sl4rtyb4rtf4st" class="tooltip"><i class="fab fa-github"></i><!-- Github --></a>
@@ -45,7 +44,9 @@ TODO: Add assesibility features to the website
   </header>
 
   <main>
-    <section class="about">
+    <section class="about" id="about">
+      <a class="next"><i class="fas fa-angle-down"></i></a>
+      <a class="last"><i class="fas fa-angle-up"></i></a>
       <div>
         <h3>About me</h3>
         <p>
@@ -116,7 +117,9 @@ TODO: Add assesibility features to the website
       <h2><q>Any code of your own that you haven’t looked at for six or more months might as well have been written by someone else. <cite>(Eagleson’s Law)</cite></q></h2>
     </section>
 
-    <section class="portfolio">
+    <section class="portfolio" id="portfolio">
+      <!-- <a class="next"><i class="fas fa-angle-down"></i></a> -->
+      <a class="last"><i class="fas fa-angle-up"></i></a>
       <div class="item-container">
         <div class="img-container">
           <a href="https://millar-knorr.nl/test/grid-test.html">
@@ -171,7 +174,7 @@ TODO: Add assesibility features to the website
     <div class="nav"><p>There will be a footer here&hellip;in time</p></div>
   </footer>
 
-
+<script src="js/smoothscroll-polifill.js"></script>
 <script src="js/main.js"></script>
 </body>
 
