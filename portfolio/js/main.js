@@ -11,24 +11,23 @@ window.addEventListener("scroll", () => {
     }
 });
 
-// Sort of random quote generation, 
-// TODO use a javascript promice to get a quote from a JSON file, also using PHP?
-const quotes = [
-    "<q>Any code of your own that you haven’t looked at for six or more months might as well have been written by someone else. <cite>Eagleson’s Law</cite></q>",
-    "<q>There are only two industries that refer to their customers as “users”. – <cite>Edward Tufte</cite></q>",
-    "<q>Always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live. – <cite>Martin Golding</cite></q>",
-    "<q>A user interface is like a joke. If you have to explain it, it’s not that good.</q>",
-    "<q>If debugging is the process of removing software bugs, then programming must be the process of putting them in – <cite>Edsger Dijkstra</cite></q>",
-    "<q>Experience is the name everyone gives to their mistakes. - <cite>Oscar Wild</cite></q>",
-    "<q>First, solve the problem. Then, write the code. - <cite>John Johnson</cite></q>",
-    "<q>Measuring programming progress by lines of code is like measuring aircraft building progress by weight. - <cite>Bill Gates</cite></q>",
-    "<q>The only <em>intuitive</em> interface is the nipple. After that it’s all learned. - <cite>Bruce Edige</cite></q>",
-]
+// fetch a json file with the quotes
+const quotes = {};
+const url = "http://andrew-millar.nl/quotes.json";
 
+fetch(url)
+    .then(response => response.json())
+    .then(data => {
+        console.log(data); 
+        quotes = data;
+    })
+    .catch(e => console.log(e));
+
+// Sort of random quote generation, 
 window.setInterval(() => {
     var random = Math.floor(Math.random() * quotes.length);
     var quote = quotes[random];
-    document.querySelector(".quote h2").innerHTML = quote;
+    document.querySelector(".quote h2").innerHTML = `<h2>${quote}</h2>`;
 }, 10000);
 
 const section = document.querySelectorAll("section");
