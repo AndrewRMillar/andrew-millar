@@ -54,7 +54,8 @@ function scrollTo(el, direction) {
     })
 }
 
-// Lot DRYer than it was, don't go overboard.
+// Lot DRYer than it was, could put the strings in an array and use forEach on that array and 
+// then a forEach inside every forEach iteration but I souldn't go overboard.
 last.forEach((el) => {
     scrollTo(el, "up");
 });
