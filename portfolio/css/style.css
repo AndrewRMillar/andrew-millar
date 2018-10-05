@@ -297,11 +297,12 @@ ul li {
   align-items: center;
   justify-content: space-around;
   transition: all .3s;
-  padding: 8em;
+  /* padding: 8em; */
+  width: 100%;
 }
 .quote h2 {
   text-shadow: 2px 2px 0 rgba(72, 72, 72, .8);
-  padding: 0 2em;
+  padding: 8em 2em;
 }
 /*Waiting dots css*/
 .wrap {
@@ -313,7 +314,7 @@ ul li {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
-  /* min-height: 24em; */
+  min-height: 24em;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -375,6 +376,7 @@ section.portfolio {
   margin: 1em 1em 3em;
   padding: 2em;
   height: auto;
+  max-width: 800px;
   background: radial-gradient(rgba(200, 200, 200, 0.11), rgb(68, 68, 68));
   box-shadow: 0px 25px 22px -15px rgba(0, 0, 0, 0.5);
 }
@@ -385,6 +387,7 @@ section.portfolio {
   height: 27vw;
   min-height: 10em;
   max-height: 17em;
+  box-shadow: 0 0 46px -10px white;
 }
 
 .img-container, .item-container .text-container {
@@ -470,7 +473,6 @@ section .last, section .next {
 section .next {
   right: 1em;
 }
-
 
 section .other {}
 
