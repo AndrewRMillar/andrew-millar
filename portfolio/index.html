@@ -23,10 +23,10 @@
   <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
   <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
-  <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+  <!-- <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32"> -->
   <link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
-  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
-  <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+  <!-- <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96"> -->
+  <!-- <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16"> -->
   <link rel="manifest" href="/manifest.json">
   <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
   <link rel="shortcut icon" href="../favicon.ico">
@@ -49,7 +49,7 @@ TODO: When reaching the footer have the rest of the page fade
       away and only show the footer with the footer content 
 TODO: Make the site more responsive to scroling, animate elements 
       of the page depenging on the scroling height 
-      
+
 -->
 
   <header id="top">
@@ -84,6 +84,10 @@ TODO: Make the site more responsive to scroling, animate elements
         </p>
       </div>
       <div class="qualities">
+        <!-- 
+          I should actually be using the meter element here, is supported by the major 
+          browsers, it should be recognised by modernizer for not supporting browsers
+        -->
         <ul>
           <li>
             HTML
@@ -220,6 +224,17 @@ TODO: Make the site more responsive to scroling, animate elements
         </div>
       </div>
     </section>
+    <!-- <section class="portfolio"> <!-- Alternative portfolio section  --><!--
+      <h2></h2>
+      <div class="container">
+        <ul>
+          <li><a href=""><img src="" alt=""><span></span></a></li>
+          <li><a href=""><img src="" alt=""><span></span></a></li>
+          <li><a href=""><img src="" alt=""><span></span></a></li>
+          <li><a href=""><img src="" alt=""><span></span></a></li>
+        </ul>
+      </div>
+    </section> -->
 
     <section class="other"></section>
   </main>
@@ -232,7 +247,7 @@ TODO: Make the site more responsive to scroling, animate elements
   </footer>
 
   <!-- >IE10 -->
-  <div class="ie10up">
+  <div class="ie10up" aria-hidden="true">
     <span class="close" onclick="closeIePopup()">✕</span>
     <p>Deze site werkt het beste met een moderne browser, probeer een van de volgende:</p>
     <ol>
