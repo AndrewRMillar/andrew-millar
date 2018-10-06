@@ -24,7 +24,7 @@ break points: 600,900,1200,1800(=optional)
 
 /* Show a popup for older browsers (>IE10, not even going to bother with < IE10) */
 .ie10up{
-  /* display: none; */
+  display: none;
 }
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
   .ie10up{
@@ -538,13 +538,13 @@ footer {
 }
 .clip-path1 {
   background: rgba(84, 113, 255, 1);
-  -webkit-clip-path: polygon(69% 79%, 100% 30%, 100% 100%, 0% 100%);
-  clip-path: polygon(69% 79%, 100% 25%, 100% 100%, 0% 100%);
+  -webkit-clip-path: polygon(95% 90%, 100% 25%, 100% 100%, 0% 100%);
+  clip-path:         polygon(95% 90%, 100% 25%, 100% 100%, 0% 100%);
 }
 .clip-path2 {
   background: rgba(90, 140, 245, 1);
-  -webkit-clip-path: polygon(68% 75%, 100% 5%, 100% 100%, 0% 100%);
-  clip-path: polygon(68% 75%, 100% 0, 100% 100%, 0% 100%);
+  -webkit-clip-path: polygon(94% 84%, 100% 20%, 100% 100%, 0% 100%);
+  clip-path:         polygon(94% 84%, 100% 20%, 100% 100%, 0% 100%);
 }
 .content {
   position: relative;
