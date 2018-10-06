@@ -230,8 +230,41 @@ TODO:
     <div class="nav"></div>
   </footer>
 
+  <!-- >IE10 -->
+  <div class="ie10up">
+    <span class="close" onclick="closeIePopup()">✕</span>
+    <p>Deze site werkt het beste met een moderne browser, probeer een van de volgende:</p>
+    <ol>
+      <li>
+        <a href="https://www.google.com/chrome/">Google Chrome</a>
+      </li>
+      <li>
+        <a href="https://www.mozilla.org/en-US/firefox/new/">Mozilla Firefox</a>
+      </li>
+      <li>
+        <a href="https://www.opera.com/">Opera</a>
+      </li>
+      <li>
+        <a href="https://www.microsoft.com/en-us/windows/microsoft-edge">Edge</a>
+      </li>
+    </ol>
+  </div>
+
+<script src="js/modernizer.js"></script>
 <script src="js/smoothscroll-polifill.js"></script>
 <script src="js/main.js"></script>
+<script>
+  var b = document.documentElement;
+      b.setAttribute('data-useragent',  navigator.userAgent);
+      b.setAttribute('data-platform', navigator.platform );
+      b.className += ((!!('ontouchstart' in window) || !!('onmsgesturechange' in window))?' touch':'');
+
+  function closeIePopup() {
+      var ie10up = document.getElementsByClassName('ie10up')[0];
+      var body = document.getElementsByTagName('body')[0];
+      body.removeChild(ie10up);
+  }
+</script>
 </body>
 
 </html>

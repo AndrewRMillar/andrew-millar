@@ -3,7 +3,7 @@ Standerd elements styling
 ******/
 
 /*
-break points: 600,900,1200,1800(optional)
+break points: 600,900,1200,1800(=optional)
 */
 
 /* For debugging: */
@@ -11,8 +11,39 @@ break points: 600,900,1200,1800(optional)
   outline: 1px solid red;
 } */
 
+/*
+  Am using flexbox and grid 
+  These properties will need a fallback option for IE11 (#$&@%#@ $%#*), especially grid:
+  https://caniuse.com/#feat=flexbox : 92%
+  https://caniuse.com/#search=grid : 87%
+*/
+
 * {
   box-sizing: border-box;
+}
+
+/* Show a popup for older browsers (>IE10, not even going to bother with < IE10) */
+.ie10up{
+  /* display: none; */
+}
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .ie10up{
+    display: block;
+    position: absolute;
+    width: 500px;
+    top: 0;
+    left: 50%;
+    margin-left: -250px;
+    background: lightgray;
+    padding: 1em;
+    border: 2px solid red;
+  }
+  .ie10up span {
+    position: relative;
+    top: 5px;
+    right: -450px;
+    cursor: pointer;
+  }
 }
 
 html, body {
@@ -507,12 +538,12 @@ footer {
 }
 .clip-path1 {
   background: rgba(84, 113, 255, 1);
-  -webkit-clip-path: polygon(69% 79%, 100% 25%, 100% 100%, 0% 100%);
+  -webkit-clip-path: polygon(69% 79%, 100% 30%, 100% 100%, 0% 100%);
   clip-path: polygon(69% 79%, 100% 25%, 100% 100%, 0% 100%);
 }
 .clip-path2 {
   background: rgba(90, 140, 245, 1);
-  -webkit-clip-path: polygon(68% 75%, 100% 0, 100% 100%, 0% 100%);
+  -webkit-clip-path: polygon(68% 75%, 100% 5%, 100% 100%, 0% 100%);
   clip-path: polygon(68% 75%, 100% 0, 100% 100%, 0% 100%);
 }
 .content {

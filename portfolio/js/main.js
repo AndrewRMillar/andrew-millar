@@ -1,11 +1,16 @@
+// I need to have a fallback or polyfill (there is no polyfill) 
+// for arrow functions, I don't really like the modernizer solution
+// Need to add the modernizer if statements other wise 
+
+
 // Paralax effect, not working so far. On the back burner
 window.addEventListener("scroll", () => {
     // get the scroll amount and move the backgroung image by a fraction of that amount
     // For some reason this doesn't work, moving on coming 
 
-//     let scrollFraq = window.scrollY / 4;
-//     const header = document.querySelector("header");
-//     header.style.backgoundPositionY = `0, ${scrollFraq}px`;   
+    // let scrollFraq = window.scrollY / 4;
+    // const header = document.querySelector("header");
+    // header.style.backgoundPositionY = `0, ${scrollFraq}px`;   
 
     if(window.innerHeight/window.scrollY < 3) {
         document.body.classList.add("scrolled");
@@ -72,3 +77,4 @@ last.forEach((el) => {
 next.forEach((el) => {
     scrollTo(el, "down");
 });
+
