@@ -71,6 +71,19 @@ a:hover {
   text-decoration: none;
   text-shadow: 0 0 2px #fff;
 }
+p a {
+  color: white;
+  transition: all .3s;
+}
+p a:hover {
+  color: white;
+  font-weight: 700;
+  text-decoration: underline
+}
+p a:active {
+  background-color: oldlace;
+  color: #444;
+}
 a:bofore, a:after {}
 
 section:not(.quote):not(.other) {
@@ -223,6 +236,9 @@ main {
   flex-direction: column;
   align-items: center;
 }
+/******
+ .aboot specific styling
+ ******/
 .about {
   max-width: 100%;
   min-width: 100%;
@@ -234,11 +250,14 @@ main {
   padding-top: 8em;
   padding-bottom: 8em;
 }
+.about h3 {
+  margin-top: 0 
+}
 
 /*animate in*/
 .about > div h3, .about > div p {
-  opacity: .5;
-  transform: translateX(-25px);
+  opacity: .3;
+  transform: translateX(-35px);
   transition: transform 1s, opacity .25s;
 }
 .scrolled .about > div h3, .scrolled .about > div p {
@@ -246,8 +265,8 @@ main {
   transform: translateX(0);
 }
 .qualities {
-  opacity: .5;
-  transform: translateX(25px);
+  opacity: .3;
+  transform: translateX(35px);
   transition: transform 1s, opacity .5s;
 }
 .scrolled .qualities {
@@ -262,7 +281,6 @@ main {
 }
 .about .qualities {
   font-size: 0.8em;
-  /* display: inline-block; */
   padding: 0;
   float: right;
   max-width: 400px;
@@ -270,7 +288,6 @@ main {
 ul li {
   list-style-type: none;
 }
-
 .progress {
   width: 200px;
   display: inline-box;
@@ -486,6 +503,98 @@ section.portfolio {
   div.item-container div.img-container {
     display: block;
   } 
+}
+/********
+ Alt portfolio styling
+ ********/
+ section.portfolio-alt {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5em 0;
+}
+.portfolio-alt .container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+.portfolio-alt ul {
+  width: 50vw;
+  height: 50vw;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-gap: 30px;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+}
+
+.portfolio-alt li {
+  position: relative;
+  list-style-type: none;
+  width: 25vw;
+  height: 25vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: all .2s;
+  border-radius: 20px;
+  border: 3px solid #a2a2a2;
+  box-shadow: inset 0 0 20px #444;
+}
+.portfolio-alt li:nth-of-type(1) {
+  transform: rotateY(7deg) rotateZ(2deg);
+}
+.portfolio-alt li:nth-of-type(1):hover {
+  transform: rotateY(-2deg) rotateZ(0deg) scale(1.1);
+}
+.portfolio-alt li:nth-of-type(2) {
+  transform: rotateY(-7deg) rotateZ(-2deg);
+}
+.portfolio-alt li:nth-of-type(2):hover {
+  transform: rotateY(2deg) rotateZ(0deg) scale(1.1);
+}
+.portfolio-alt li:nth-of-type(3) {
+  transform: rotateY(-7deg) rotateZ(-2deg);
+}
+.portfolio-alt li:nth-of-type(3):hover {
+  transform: rotateY(2deg) rotateZ(0deg) scale(1.1);
+}
+.portfolio-alt li:nth-of-type(4) {
+  transform: rotateY(-7deg) rotateZ(2deg);
+}
+.portfolio-alt li:nth-of-type(4):hover {
+  transform: rotateY(2deg) rotateZ(0deg) scale(1.1);
+}
+
+.portfolio-alt li img {
+  flex-shrink: 0;
+  min-width: 100%;
+  min-height: 100%
+}
+.portfolio-alt li span {
+  background-color: rgba(90, 140, 245, 0.8);
+  box-shadow: inset 0 0 20px 0px black;
+  position: absolute;
+  visibility: hidden;
+  width: 100%;
+  box-sizing: border-box;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: all .5s;
+  display: block;
+  padding: 1em;
+  color: white !important;
+  text-shadow: 1px 1px 2px black;
+}
+.portfolio-alt li:hover span {
+  visibility: visible;
+  opacity: 1;
 }
 
 

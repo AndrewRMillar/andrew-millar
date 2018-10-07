@@ -80,28 +80,37 @@ TODO: Make the site more responsive to scroling, animate elements
       <div>
         <h3>About me</h3>
         <p>
-          Ik heb allerlei meningen over webontwikkeling, enzo Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique dolorum nihil quam nemo ab a soluta deserunt ducimus minima corporis! Atque, libero enim quas doloribus quod ducimus corporis excepturi harum?
+            I have to push the pram a lot. Look, my liege! The Lady of the Lake, her arm clad 
+            in the purest shimmering samite, held aloft Excalibur from the bosom of the water, 
+            signifying by divine providence that I, Arthur, was to carry Excalibur. That is why 
+            I am your king.
         </p>
+        <p>
+            Listen. Strange women lying in ponds distributing swords is no basis for a system of 
+            government. Supreme executive power derives from a mandate from the masses, not from 
+            some farcical aquatic ceremony. Well, how'd you become king, then? <a href="http://fillerama.io/">fillerama</a>
+          </p>
       </div>
       <div class="qualities">
         <!-- 
           I should actually be using the meter element here, is supported by the major 
           browsers, it should be recognised by modernizer for not supporting browsers
+          Meter needs a shit ton of styling: https://css-tricks.com/html5-meter-element/
         -->
         <ul>
           <li>
             HTML
             <div class="progress">
-              <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
-                <span class="sr-only">60% Complete</span>
+              <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                <span class="sr-only" hidden>75% Complete</span>
               </div>
             </div>
           </li>
           <li>
             CSS
             <div class="progress">
-              <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
-                <span class="sr-only">60% Complete</span>
+              <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+                <span class="sr-only" hidden>70% Complete</span>
               </div>
             </div>
           </li>
@@ -109,31 +118,31 @@ TODO: Make the site more responsive to scroling, animate elements
             Javascript
             <div class="progress">
               <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
-                <span class="sr-only">60% Complete</span>
+                <span class="sr-only" hidden>60% Complete</span>
               </div>
             </div>
           </li>
           <li>
             React
             <div class="progress">
-              <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
-                <span class="sr-only">60% Complete</span>
+              <div class="progress-bar" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">
+                <span class="sr-only" hidden>30% Complete</span>
               </div>
             </div>
           </li>
           <li>
             Vue
             <div class="progress">
-              <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
-                <span class="sr-only">60% Complete</span>
+              <div class="progress-bar" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">
+                <span class="sr-only" hidden>10% Complete</span>
               </div>
             </div>
           </li>
           <li>
             Python
             <div class="progress">
-              <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
-                <span class="sr-only">60% Complete</span>
+              <div class="progress-bar" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                <span class="sr-only" hidden>20% Complete</span>
               </div>
             </div>
           </li>
@@ -224,17 +233,66 @@ TODO: Make the site more responsive to scroling, animate elements
         </div>
       </div>
     </section>
-    <!-- <section class="portfolio"> <!-- Alternative portfolio section  --><!--
+    <section class="portfolio-alt"> <!-- Alternative portfolio section  -->
       <h2></h2>
       <div class="container">
         <ul>
-          <li><a href=""><img src="" alt=""><span></span></a></li>
-          <li><a href=""><img src="" alt=""><span></span></a></li>
-          <li><a href=""><img src="" alt=""><span></span></a></li>
-          <li><a href=""><img src="" alt=""><span></span></a></li>
+          <li>
+            <a href="https://millar-knorr.nl/test/CIFHtml.html">
+              <img src="img/cssfromhtml.png" alt="css grid exoeriment page">
+              <span>
+                <h3>Style from HTML/CSS</h3>
+                <p>
+                  Projectje van een aantal jaren geleden toen ik werkte bij een bedrijf dat websites scrapte. Soms
+                  moesten widgets in klanten pagina's worden gezet en was er een css conflict met de klant css. Uitzoeken 
+                  waar dat conflict zat was vaak een heel gezoek. Ik probeerde met de code op deze pagina de relevante 
+                  stijl uit de klant css te halen voor classen en id's die in onze widget zaten.
+                </p>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="https://fundament.millar-knorr.nl/">
+              <img src="img/presale.png" alt="sollicitatie werk">
+              <span>
+                <h3>Pre-Sale</h3>
+                <p>
+                  Dit was een website geschreven voor een sollicitatie. Ik kreeg se opdracht om in twee dagen een resposive 
+                  website te creeren van een pdf die me toegestuurd werd. Gebruikte technieken; html/css, bootstrap.
+                </p>
+
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="https://millar-knorr.nl/test/grid-test.html">
+              <img src="img/grid.png" alt="css grid exoeriment page">
+              <span>
+                <h3>CSS grid test</h3>
+                <p>
+                  Een pagina gecreerd voor mezelf om de css grid technieken uit te proberen. Bij voorbeeld het gebruik van 
+                  <code>grid-template-row</code> en <code>grid-auto-columns</code>, <code>grid-row</code> en <code>grid-columns</code>. 
+                  Ik was gefascineerd dat verschillende elementen zonder problemen dezelfde grid positie konden hebben. 
+                </p>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="http://www.codeskulptor.org/#user26_8JM3weAUXH_2.py">
+              <img src="img/rice-rocks.png" alt="Python game">
+              <span>
+                <h3>Python asteroids</h3>
+                <p>
+                  Voor een python online cursus heb ik een spelletje asteroids gemaakt. Voor het doen van deze cursus had 
+                  ik nog geen programeer kennis. Dit was mijn introductie in programmeren wat heeft geleid tot het punt dat 
+                  ik nu heb bereikt, dat ik van programmeren mijn werk wilde maken.
+                </p>
+              </span>
+            </a>
+          </li>
         </ul>
       </div>
-    </section> -->
+    </section>
 
     <section class="other"></section>
   </main>

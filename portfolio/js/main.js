@@ -1,5 +1,5 @@
-// I need to have a fallback or polyfill (there is no polyfill) 
-// for arrow functions, I don't really like the modernizer solution
+// I need to have a fallback or polyfill for arrow functions
+// (there is no polyfill). I don't really like the modernizer solution
 // Need to add the modernizer if statements other wise 
 
 
@@ -12,10 +12,18 @@ window.addEventListener("scroll", () => {
     // const header = document.querySelector("header");
     // header.style.backgoundPositionY = `0, ${scrollFraq}px`;   
 
-    if(window.innerHeight/window.scrollY < 3) {
+    if(window.innerHeight/window.scrollY < 11) {
         document.body.classList.add("scrolled");
+    } else {
+        document.body.classList.remove("scrolled");
     }
 });
+
+
+// When an element get into the view of the user do something
+// node.getBoundingClientRect().top top of the element in relation to the
+
+
 
 // fetch a json file with the quotes
 // fetch polyfill: http://github.github.io/fetch/
@@ -34,6 +42,10 @@ fetch(url, {
 
 function pastQuote () {
     // Select a random quote from the quotes object 
+
+    // Check if there is anything in quotes
+    if(!quotes.hasOwnProperty("quotes")) return;
+
     var random = Math.floor(Math.random() * quotes.quotes.length);
     var quote = quotes.quotes[random];
     document.querySelector(".quote").innerHTML = `<h2>${quote}</h2>`;
@@ -60,7 +72,7 @@ section.forEach((el) => {
 function scrollTo(el, direction) {
     // Function takes in a DOM element adds a click event handler that when 
     // clicked scrolls the page to the correct place in the page, an element id
-    // Only side effects
+    // No return only side effects
 
     const parentId = el.parentNode.id;
     const id = direction == "up"? `#${ids[ids.indexOf(parentId)-1]}`: `#${ids[ids.indexOf(parentId)+1]}`;
