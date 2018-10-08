@@ -20,7 +20,7 @@ window.addEventListener("scroll", () => {
 });
 
 
-// When an element get into the view of the user do something
+// TODO: When an element gets into the view of the user do something
 // node.getBoundingClientRect().top top of the element in relation to the
 
 
