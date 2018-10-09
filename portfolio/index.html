@@ -81,15 +81,15 @@ TODO: Make the site more responsive to scroling, animate elements
       <div>
         <h3>About me</h3>
         <p>
-            I have to push the pram a lot. Look, my liege! The Lady of the Lake, her arm clad 
-            in the purest shimmering samite, held aloft Excalibur from the bosom of the water, 
-            signifying by divine providence that I, Arthur, was to carry Excalibur. That is why 
-            I am your king.
+          I have to push the pram a lot. Look, my liege! The Lady of the Lake, her arm clad 
+          in the purest shimmering samite, held aloft Excalibur from the bosom of the water, 
+          signifying by divine providence that I, Arthur, was to carry Excalibur. That is why 
+          I am your king.
         </p>
         <p>
-            Listen. Strange women lying in ponds distributing swords is no basis for a system of 
-            government. Supreme executive power derives from a mandate from the masses, not from 
-            some farcical aquatic ceremony. Well, how'd you become king, then? <a href="http://fillerama.io/">fillerama</a>
+          Listen. Strange women lying in ponds distributing swords is no basis for a system of 
+          government. Supreme executive power derives from a mandate from the masses, not from 
+          some farcical aquatic ceremony. Well, how'd you become king, then? <a href="http://fillerama.io/">fillerama</a>
           </p>
       </div>
       <div class="qualities">
@@ -152,26 +152,19 @@ TODO: Make the site more responsive to scroling, animate elements
     </section>
 
     <section class="quote">
-        <div class="wrap">
-          <div class="loading">
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-          </div>
+      <div class="wrap">
+        <div class="loading">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
+      </div>
     </section>
 
-    <section class="portfolio" id="portfolio">
-      <!-- 
-        I don't like it, something needs to change visualy, 
-        it is to 10 years ago 
-        Option: Do only images with text on hover, place images in grid still with 
-        3D moving effect and popping out of the grid, try in codepen (https://codepen.io/andrewRmillar/pen/oaLJZb)
-      -->
-      <!-- <a class="next"><i class="fas fa-angle-down"></i></a> -->
+    <!-- <section class="portfolio" id="portfolio">
       <a class="last"><i class="fas fa-angle-up"></i></a>
       <div class="item-container">
         <div class="img-container">
@@ -234,7 +227,8 @@ TODO: Make the site more responsive to scroling, animate elements
         </div>
       </div>
     </section>
-    <section class="portfolio-alt"> <!-- Alternative portfolio section  -->
+
+    <section class="portfolio-alt">
       <h2></h2>
       <div class="container">
         <ul>
@@ -294,15 +288,123 @@ TODO: Make the site more responsive to scroling, animate elements
         </ul>
       </div>
     </section>
+ -->
+    <section class="portfolio-car">
+      <span class="lastt"><i class="fas fa-angle-left"></i></span>
+      <span class="nextt"><i class="fas fa-angle-right"></i></span>
+      
+      <div class="container">
+        <!--  Second name of the classname needs to be the order of the item  -->
+        <div class="car first active">
+          <div class="item-container">
+            <div class="img-container">
+              <a href="https://millar-knorr.nl/test/CIFHtml.html">
+                <img src="img/cssfromhtml.png" alt="css grid exoeriment page">
+              </a>
+            </div>
+            <div class="text-container">
+              <h3>Style from HTML/CSS</h3>
+              <p>
+                Projectje van een aantal jaren geleden toen ik werkte bij een bedrijf dat websites scrapte. Soms
+                moesten widgets in klanten pagina's worden gezet en was er een css conflict met de klant css. Uitzoeken 
+                waar dat conflict zat was vaak een heel gezoek. Ik probeerde met de code op deze pagina de relevante 
+                stijl uit de klant css te halen voor classen en id's die in onze widget zaten. Technieken: html/css/js/regex
+              </p>
+            </div>
+          </div>
+        </div>
 
-    <section class="other"></section>
+        <div class="car second">
+          <div class="item-container">
+            <div class="img-container">
+              <a href="https://fundament.millar-knorr.nl/">
+                <img src="img/presale.png" alt="sollicitatie werk">
+              </a>
+            </div>
+            <div class="text-container">
+              <h3>Pre-Sale</h3>
+              <p>
+                Dit was een website geschreven voor een sollicitatie. Ik kreeg de opdracht om in twee dagen een resposive 
+                website te creeren van een pdf die me toegestuurd werd. Gebruikte technieken; html/css, bootstrap.
+              </p>
+            </div>
+          </div>
+        </div>
+            
+        <div class="car third">
+          <div class="item-container">
+            <div class="img-container">
+              <a href="https://millar-knorr.nl/test/grid-test.html">
+                <img src="img/grid.png" alt="css grid exoeriment page">
+              </a>
+            </div>
+            <div class="text-container">
+              <h3>CSS grid test</h3>
+              <p>
+                Een pagina gecreerd voor mezelf om de css grid technieken uit te proberen. Bij voorbeeld het gebruik van 
+                <code>grid-template-row</code> en <code>grid-auto-columns</code>, <code>grid-row</code> en <code>grid-columns</code>. 
+                Ik was gefascineerd dat verschillende elementen zonder problemen dezelfde grid positie konden hebben. 
+              </p>
+            </div>
+          </div>
+        </div>
+            
+        <div class="car fourth">
+          <div class="item-container">
+            <div class="img-container">
+              <a href="http://www.codeskulptor.org/#user26_8JM3weAUXH_2.py">
+                <img src="img/rice-rocks.png" alt="Python game">
+              </a>
+            </div>
+            <div class="text-container">
+              <h3>Python asteroids</h3>
+              <p>
+                Voor een python online cursus heb ik een spelletje asteroids gemaakt. Voor het aanvangen van deze cursus had 
+                ik nog geen enkele programeer kennis. Dit was mijn introductie in programmeren wat heeft geleid naar het punt dat 
+                ik nu heb bereikt, dat ik van programmeren mijn beroep wil maken.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
   </main>
 
   <footer>
     <div class="clip-path1"></div>
     <div class="clip-path2"></div>
     <div class="content"><p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis enim animi numquam optio nulla pariatur tempore explicabo sequi voluptates, exercitationem corporis minus eligendi eum in saepe aperiam possimus dicta dolores!</p></div>  
-    <div class="nav"></div>
+    <div class="nav">
+      <div class="totop">
+        <a href="#top"></a>
+      </div>
+      <div class="social">
+        <ul>
+          <li>
+            <a href="https://github.com/Sl4rtyb4rtf4st" class="tooltip">
+              <i class="fab fa-github"></i><!-- Github -->
+            </a>
+            <span class="tooltip-text">Github</span></li>
+          <li>
+            <a href="https://codepen.io/Sl4rtyb4rtf4st/" class="tooltip">
+              <i class="fab fa-codepen"></i><!-- Codepen -->
+            </a>
+            <span class="tooltip-text">Codepen</span>
+          </li>
+          <li>
+            <a href="contact" class="tooltip">
+              <i class="far fa-envelope"></i><!-- Contact -->
+            </a> 
+            <span class="tooltip-text">Contact</span>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/armillar/" class="tooltip"><i class="fab fa-linkedin"></i></a>
+            <span class="tooltip-text">LinkedIn</span>
+          </li>
+        </ul>
+      </div>
+    </div>
   </footer>
 
   <!-- >IE10 -->

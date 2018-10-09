@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="robots" content="noindex, nofollow">  
+  <title>Andrew Millar - Portfolio</title>
+
+  <meta name="description" content="Portfolio Site Andrew Millar">
+  <meta name="author" content="andrew@millar-knorr.nl">
+  <meta name="og:title" content="Andrew Millar">
+  <meta name="og:image" content="">
+  <meta name="og:description" content="Portfolio Site Andrew Millar">
+  <meta name="og:site_name" content="Andrew Millar - Portfolio">
+  <!-- favicon mess -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+  <!-- <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32"> -->
+  <link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
+  <!-- <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96"> -->
+  <!-- <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16"> -->
+  <link rel="manifest" href="/manifest.json">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="../favicon.ico">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.3.1/css/all.css'>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<!--  
+TODO: Make site responsive
+TODO: Add assesibility features to the website
+TODO: Fill the footer with meaningfull content
+TODO: When reaching the footer have the rest of the page fade 
+      away and only show the footer with the footer content 
+TODO: Make the site more responsive to scroling, animate elements 
+      of the page depenging on the scroling height 
+
+-->
+
+  <header id="top">
+    <div class="face">
+      <img src="https://millar-knorr.nl/face.png" alt="My Face">
+    </div>
+    <h1>Andrew Millar</h1>
+    <h2>Webdevelopment</h2>
+    <p>
+        Deze website is op het moment nog even leeg, ik ben bezig met vervanging 
+        aangezien de poagina die hiervoor hier stond een beetje een blamage was.
+        Het is even wachten tot de site klaar is dat duur hooguit nog een paar weken.
+    </p>
+  
+    <div class="social">
+      <ul>
+        <li><a href="https://github.com/Sl4rtyb4rtf4st" class="tooltip"><i class="fab fa-github"></i><!-- Github --></a>
+          <span class="tooltip-bottom">Github</span></li>
+        <li><a href="https://codepen.io/Sl4rtyb4rtf4st/" class="tooltip"><i class="fab fa-codepen"></i><!-- Codepen --></a>
+          <span class="tooltip-bottom">Codepen</span></li>
+        <li><a href="contact" class="tooltip"><i class="far fa-envelope"></i><!-- Contact --></a> <span class="tooltip-bottom">Contact</span></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- >IE10 -->
+  <div class="ie10up" aria-hidden="true">
+    <span class="close" onclick="closeIePopup()">✕</span>
+    <p>Deze site werkt het beste met een moderne browser, probeer een van de volgende:</p>
+    <ol>
+      <li>
+        <a href="https://www.google.com/chrome/">Google Chrome</a>
+      </li>
+      <li>
+        <a href="https://www.mozilla.org/en-US/firefox/new/">Mozilla Firefox</a>
+      </li>
+      <li>
+        <a href="https://www.opera.com/">Opera</a>
+      </li>
+      <li>
+        <a href="https://www.microsoft.com/en-us/windows/microsoft-edge">Edge</a>
+      </li>
+    </ol>
+  </div>
+
+<script src="js/modernizer.js"></script>
+<script src="js/smoothscroll-polifill.js"></script>
+<script src="js/main.js"></script>
+<script>
+  var b = document.documentElement;
+      b.setAttribute('data-useragent',  navigator.userAgent);
+      b.setAttribute('data-platform', navigator.platform );
+      b.className += ((!!('ontouchstart' in window) || !!('onmsgesturechange' in window))?' touch':'');
+
+  function closeIePopup() {
+      var ie10up = document.getElementsByClassName('ie10up')[0];
+      var body = document.getElementsByTagName('body')[0];
+      alert("Serieus, het werkt echt veel beter met een moderne browser! Alles op internet werkt eigenlijk beter met een moderne browser")
+      body.removeChild(ie10up);
+  }
+</script>
+</body>
+
+</html>

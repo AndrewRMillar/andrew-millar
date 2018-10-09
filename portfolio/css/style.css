@@ -429,7 +429,7 @@ section.portfolio {
   margin: 1em 1em 3em;
   padding: 2em;
   height: auto;
-  max-width: 800px;
+  max-width: 900px;
   background: radial-gradient(rgba(200, 200, 200, 0.11), rgb(68, 68, 68));
   box-shadow: 0px 25px 22px -15px rgba(0, 0, 0, 0.5);
 }
@@ -439,9 +439,10 @@ section.portfolio {
 .img-container img {
   height: 27vw;
   min-height: 10em;
-  max-height: 17em;
+  max-height: 20em;
   box-shadow: 0 0 46px -10px white;
   border: 3px solid #a0a0a0;
+  border-radius: 5px;
 }
 
 .img-container, .item-container .text-container {
@@ -600,6 +601,105 @@ section.portfolio {
   opacity: 1;
 }
 
+/*******
+ Portfolio alt alt
+ *******/
+ :root {
+  --width: 450px;
+  --btn-width-height: 50px;
+  --outline: none;
+}
+
+@keyframes pulse-alt {
+  from {
+    transform: scale(1.04);
+  }
+  to {
+    transform: scale(.96);
+  }
+}
+
+.portfolio-car {
+  position:relative;
+  width: 100%;
+  height: 100%;
+  padding: 7em 0;
+}
+.nextt, .lastt {
+  z-index: 2000000;
+  color: white;
+  font-size: 2em;
+  line-height: 25px;
+  position: absolute;
+  left: 4%;
+  top: calc(50% - var(--btn-width-height)/2);
+  width: var(--btn-width-height);
+  height: var(--btn-width-height);
+  cursor: pointer;
+  text-shadow: 0 0 10px black;
+  transition: all .2s;
+  animation: pulse-alt 1s linear infinite alternate;
+}
+
+.nextt:hover, .lastt:hover {
+  transform: scale(1.05);
+  animation: none;
+}
+.nextt:active, .lastt:active {
+  transform: scale(.95);
+}
+.nextt i.fa-angle-right, .lastt i.fa-angle-left{
+  text-shadow: 0 0 5px #000;
+  position: relative;
+  top: calc(50% - .5em);
+  left: calc(50% - .25em);
+}
+.nextt {
+  left: 90%;
+}
+.container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.first, .second, .third, .fourth {
+  position: relative;
+  top: calc(50% - var(--width)/2);
+  color: white;
+  /* background: #333; */
+  width: 100%;
+  height: var(--width);
+  display:none;
+  transition: all .3s;
+  opacity: .5
+}
+.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  z-index: 10;
+}
+.second {
+  /* background: #444; */
+}
+.third {
+  /* background: #555; */
+}
+.fourth {
+  /* background: #666; */
+}
+.portfolio-car .item-container {}
+.portfolio-car .text-container {}
+.portfolio-car .img-container {}
+.portfolio-car .item-container {
+  padding-top: 2em;
+}
+
+
+
 
 /******
  optional styles
@@ -625,7 +725,6 @@ section .other {}
 /******
  Page specific styling - footer
  ******/
-
 footer {
   box-shadow: inset 0px 3px 22px -5px black;
   color: white;
@@ -661,5 +760,49 @@ footer {
 .content {
   position: relative;
   z-index: 3;
+  float: right;
+  width: 50%;
+}
+footer .social ul {
+  margin: 1em;
+}
+footer .social li {
+  display: block;  
 }
 footer div {}
+
+/*Footer tooltips*/
+footer .tooltip {
+  position: relative;
+  display: inline-block;
+}
+footer .tooltip .tooltip-text {
+  visibility: hidden;
+  width: 120px;
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+footer .tooltip:hover .tooltip-text {
+  visibility: visible;
+}
+footer .tooltip .tooltip-text {
+  top: -5px;
+  right: 105%; 
+}
+footer .tooltip .tooltip-text::after {
+  content: " ";
+  position: absolute;
+  top: 100%; /* At the bottom of the tooltip */
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+}
