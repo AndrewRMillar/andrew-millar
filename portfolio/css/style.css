@@ -668,31 +668,39 @@ section.portfolio {
   overflow: hidden;
 }
 .first, .second, .third, .fourth {
-  position: relative;
-  top: calc(50% - var(--width)/2);
+  z-index: -1;
+  position: absolute;
+  visibility: hidden;
+  top: calc(50% - 225px);
   color: white;
   /* background: #333; */
   width: 100%;
-  height: var(--width);
+  height: 450px;
   display:none;
-  transition: all .3s;
-  opacity: .5
+  transition: all .5s ease;
+  opacity: 0;
 }
 .active {
+  opacity: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 1;
   z-index: 10;
+  visibility: visible;
 }
-.second {
-  /* background: #444; */
+/*Transition the items in and out*/
+.leave-right {
+  z-index: 20;
+  opacity: 0;
+  transform: translateX(100px);
 }
-.third {
-  /* background: #555; */
+.leave-left {
+  z-index: 20;
+  opacity: 0;
+  transform: translateX(-100px);
 }
-.fourth {
-  /* background: #666; */
+.enter {
+  opacity: 1;
 }
 .portfolio-car .item-container {}
 .portfolio-car .text-container {}
