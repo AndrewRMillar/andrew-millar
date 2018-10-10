@@ -34,6 +34,9 @@
   <meta name="msapplication-TileImage" content="/mstile-144x144.png">
   <meta name="theme-color" content="#ffffff">
 
+  <!-- For the carousel wil revisit my own implementation at a later date -->
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.3.1/css/all.css'>
   <link rel="stylesheet" href="css/style.css">
@@ -164,138 +167,13 @@ TODO: Make the site more responsive to scroling, animate elements
       </div>
     </section>
 
-    <!-- <section class="portfolio" id="portfolio">
-      <a class="last"><i class="fas fa-angle-up"></i></a>
-      <div class="item-container">
-        <div class="img-container">
-          <a href="https://millar-knorr.nl/test/CIFHtml.html">
-            <img src="img/cssfromhtml.png" alt="css grid exoeriment page">
-          </a>
-        </div>
-        <div class="text-container">
-          <h3>Style from HTML/CSS</h3>
-          <p>
-            Projectje van een aantal jaren geleden toen ik werkte bij een bedrijf dat websites scrapte. Soms
-            moesten widgets in klanten pagina's worden gezet en was er een css conflict met de klant css. Uitzoeken 
-            waar dat conflict zat was vaak een heel gezoek. Ik probeerde met de code op deze pagina de relevante 
-            stijl uit de klant css te halen voor classen en id's die in onze widget zaten. Technieken: html/css/js/regex
-          </p>
-        </div>
-      </div>
-      <div class="item-container">
-        <div class="img-container">
-          <a href="https://fundament.millar-knorr.nl/">
-            <img src="img/presale.png" alt="sollicitatie werk">
-          </a>
-        </div>
-        <div class="text-container">
-          <h3>Pre-Sale</h3>
-          <p>
-            Dit was een website geschreven voor een sollicitatie. Ik kreeg de opdracht om in twee dagen een resposive 
-            website te creeren van een pdf die me toegestuurd werd. Gebruikte technieken; html/css, bootstrap.
-          </p>
-        </div>
-      </div>
-      <div class="item-container">
-        <div class="img-container">
-          <a href="https://millar-knorr.nl/test/grid-test.html">
-            <img src="img/grid.png" alt="css grid exoeriment page">
-          </a>
-        </div>
-        <div class="text-container">
-          <h3>CSS grid test</h3>
-          <p>
-            Een pagina gecreerd voor mezelf om de css grid technieken uit te proberen. Bij voorbeeld het gebruik van 
-            <code>grid-template-row</code> en <code>grid-auto-columns</code>, <code>grid-row</code> en <code>grid-columns</code>. 
-            Ik was gefascineerd dat verschillende elementen zonder problemen dezelfde grid positie konden hebben. 
-          </p>
-        </div>
-      </div>
-      <div class="item-container">
-        <div class="img-container">
-          <a href="http://www.codeskulptor.org/#user26_8JM3weAUXH_2.py">
-            <img src="img/rice-rocks.png" alt="Python game">
-          </a>
-        </div>
-        <div class="text-container">
-          <h3>Python asteroids</h3>
-          <p>
-            Voor een python online cursus heb ik een spelletje asteroids gemaakt. Voor het aanvangen van deze cursus had 
-            ik nog geen enkele programeer kennis. Dit was mijn introductie in programmeren wat heeft geleid naar het punt dat 
-            ik nu heb bereikt, dat ik van programmeren mijn beroep wil maken.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="portfolio-alt">
-      <h2></h2>
-      <div class="container">
-        <ul>
-          <li>
-            <a href="https://millar-knorr.nl/test/CIFHtml.html">
-              <img src="img/cssfromhtml.png" alt="css grid exoeriment page">
-              <span>
-                <h3>Style from HTML/CSS</h3>
-                <p>
-                  Projectje van een aantal jaren geleden toen ik werkte bij een bedrijf dat websites scrapte. Soms
-                  moesten widgets in klanten pagina's worden gezet en was er een css conflict met de klant css. Uitzoeken 
-                  waar dat conflict zat was vaak een heel gezoek. Ik probeerde met de code op deze pagina de relevante 
-                  stijl uit de klant css te halen voor classen en id's die in onze widget zaten.
-                </p>
-              </span>
-            </a>
-          </li>
-          <li>
-            <a href="https://fundament.millar-knorr.nl/">
-              <img src="img/presale.png" alt="sollicitatie werk">
-              <span>
-                <h3>Pre-Sale</h3>
-                <p>
-                  Dit was een website geschreven voor een sollicitatie. Ik kreeg se opdracht om in twee dagen een resposive 
-                  website te creeren van een pdf die me toegestuurd werd. Gebruikte technieken; html/css, bootstrap.
-                </p>
-
-              </span>
-            </a>
-          </li>
-          <li>
-            <a href="https://millar-knorr.nl/test/grid-test.html">
-              <img src="img/grid.png" alt="css grid exoeriment page">
-              <span>
-                <h3>CSS grid test</h3>
-                <p>
-                  Een pagina gecreerd voor mezelf om de css grid technieken uit te proberen. Bij voorbeeld het gebruik van 
-                  <code>grid-template-row</code> en <code>grid-auto-columns</code>, <code>grid-row</code> en <code>grid-columns</code>. 
-                  Ik was gefascineerd dat verschillende elementen zonder problemen dezelfde grid positie konden hebben. 
-                </p>
-              </span>
-            </a>
-          </li>
-          <li>
-            <a href="http://www.codeskulptor.org/#user26_8JM3weAUXH_2.py">
-              <img src="img/rice-rocks.png" alt="Python game">
-              <span>
-                <h3>Python asteroids</h3>
-                <p>
-                  Voor een python online cursus heb ik een spelletje asteroids gemaakt. Voor het doen van deze cursus had 
-                  ik nog geen programeer kennis. Dit was mijn introductie in programmeren wat heeft geleid tot het punt dat 
-                  ik nu heb bereikt, dat ik van programmeren mijn werk wilde maken.
-                </p>
-              </span>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </section>
- -->
     <section class="portfolio-car">
-      <span class="lastt"><i class="fas fa-angle-left"></i></span>
-      <span class="nextt"><i class="fas fa-angle-right"></i></span>
+      <!-- <span class="lastt"><i class="fas fa-angle-left"></i></span>
+      <span class="nextt"><i class="fas fa-angle-right"></i></span> -->
       
-      <div class="container">
+      <div class="carousel-con" id="carousel-con">
         <!--  Second name of the classname needs to be the order of the item  -->
-        <div class="car first active">
+        <div>
           <div class="item-container">
             <div class="img-container">
               <a href="https://millar-knorr.nl/test/CIFHtml.html">
@@ -314,7 +192,7 @@ TODO: Make the site more responsive to scroling, animate elements
           </div>
         </div>
 
-        <div class="car second">
+        <div>
           <div class="item-container">
             <div class="img-container">
               <a href="https://fundament.millar-knorr.nl/">
@@ -331,7 +209,7 @@ TODO: Make the site more responsive to scroling, animate elements
           </div>
         </div>
             
-        <div class="car third">
+        <div>
           <div class="item-container">
             <div class="img-container">
               <a href="https://millar-knorr.nl/test/grid-test.html">
@@ -349,7 +227,7 @@ TODO: Make the site more responsive to scroling, animate elements
           </div>
         </div>
             
-        <div class="car fourth">
+        <div>
           <div class="item-container">
             <div class="img-container">
               <a href="http://www.codeskulptor.org/#user26_8JM3weAUXH_2.py">
@@ -374,38 +252,66 @@ TODO: Make the site more responsive to scroling, animate elements
   <footer>
     <div class="clip-path1"></div>
     <div class="clip-path2"></div>
-    <div class="content"><p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis enim animi numquam optio nulla pariatur tempore explicabo sequi voluptates, exercitationem corporis minus eligendi eum in saepe aperiam possimus dicta dolores!</p></div>  
-    <div class="nav">
-      <div class="totop">
-        <a href="#top"></a>
-      </div>
-      <div class="social">
-        <ul>
-          <li>
-            <a href="https://github.com/Sl4rtyb4rtf4st" class="tooltip">
-              <i class="fab fa-github"></i><!-- Github -->
-            </a>
-            <span class="tooltip-text">Github</span></li>
-          <li>
-            <a href="https://codepen.io/Sl4rtyb4rtf4st/" class="tooltip">
-              <i class="fab fa-codepen"></i><!-- Codepen -->
-            </a>
-            <span class="tooltip-text">Codepen</span>
-          </li>
-          <li>
-            <a href="contact" class="tooltip">
-              <i class="far fa-envelope"></i><!-- Contact -->
-            </a> 
-            <span class="tooltip-text">Contact</span>
-          </li>
-          <li>
-            <a href="https://www.linkedin.com/in/armillar/" class="tooltip"><i class="fab fa-linkedin"></i></a>
-            <span class="tooltip-text">LinkedIn</span>
-          </li>
-        </ul>
-      </div>
+    <div class="content">
+      <p>
+        Ik ben open voor web geralateerde projecten, het bouwen van 
+        een website, of voor werk in loondienst. Je kan contact met 
+        me opnemen voor meer informatie of gewoon een praatje via het 
+        contact formulier of vie twitter.
+      </p>
+    </div>  
+    <div class="totop">
+      <a href="#top"></a>
+    </div>
+    <div class="social">
+      <ul>
+        <li>
+          <a href="https://github.com/Sl4rtyb4rtf4st" class="tooltip" title="Github">
+            <i class="fab fa-github"></i>
+            <span>Github</span><!-- Github -->
+          </a>
+          <!-- <span class="tooltip-text">Github</span></li> -->
+        <li>
+          <a href="https://codepen.io/Sl4rtyb4rtf4st/" class="tooltip" title="Codepen">
+            <i class="fab fa-codepen"></i><!-- Codepen -->
+            <span>CodePen</span>
+          </a>
+          <!-- <span class="tooltip-text">Codepen</span> -->
+        </li>
+        <li>
+          <a href="https://www.twitter.com/AndrewRMillar" title="twitter">
+            <i class="fab fa-twitter"></i>
+            <span>Twitter</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/armillar/" class="tooltip" title="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+            <span>LinkedIn</span>
+          </a>
+          <!-- <span class="tooltip-text">LinkedIn</span> -->
+        </li>
+        <li>
+          <a class="contact tooltip" title="Contact">
+            <i class="far fa-envelope"></i><!-- Contact -->
+            <span>Contact</span>
+          </a> 
+          <!-- <span class="tooltip-text">Contact</span> -->
+          <!-- Should create a screen filling popup with a contact form -->
+        </li>
+      </ul>
     </div>
   </footer>
+  <!-- Contact modal -->
+  <div class="form-container">
+    <span class="close-form">&times;</span>
+    <form action="" method="post">
+      <input type="text" placeholder="Naam" name="naam" title="naam" id="naam" autofocus required>
+      <input type="email" placeholder="email@domein.nl" pattern="[a-zA-Z-\._0-9]+@[^\.]+\.\w+" name="email" id="email" required>
+      <textarea></textarea>
+      <input type="submit" value="Verstuur">
+    </form>
+  </div>
 
   <!-- >IE10 -->
   <div class="ie10up" aria-hidden="true">
@@ -426,23 +332,28 @@ TODO: Make the site more responsive to scroling, animate elements
       </li>
     </ol>
   </div>
+  <!-- For the carousel -->
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <script type="text/javascript" src="./js/slick.min.js"></script>
+  <!-- end carousel -->
 
-<script src="js/modernizer.js"></script>
-<script src="js/smoothscroll-polifill.js"></script>
-<script src="js/main.js"></script>
-<script>
-  var b = document.documentElement;
-      b.setAttribute('data-useragent',  navigator.userAgent);
-      b.setAttribute('data-platform', navigator.platform );
-      b.className += ((!!('ontouchstart' in window) || !!('onmsgesturechange' in window))?' touch':'');
+  <script src="js/modernizer.js"></script>
+  <script src="js/smoothscroll-polifill.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    var b = document.documentElement;
+        b.setAttribute('data-useragent',  navigator.userAgent);
+        b.setAttribute('data-platform', navigator.platform );
+        b.className += ((!!('ontouchstart' in window) || !!('onmsgesturechange' in window))?' touch':'');
 
-  function closeIePopup() {
-      var ie10up = document.getElementsByClassName('ie10up')[0];
-      var body = document.getElementsByTagName('body')[0];
-      alert("Serieus, het werkt echt veel beter met een moderne browser! Alles op internet werkt eigenlijk beter met een moderne browser")
-      body.removeChild(ie10up);
-  }
-</script>
+    function closeIePopup() {
+        var ie10up = document.getElementsByClassName('ie10up')[0];
+        var body = document.getElementsByTagName('body')[0];
+        alert("Serieus, het werkt echt veel beter met een moderne browser! Alles op internet werkt eigenlijk beter met een moderne browser")
+        body.removeChild(ie10up);
+    }
+  </script>
 </body>
 
 </html>
