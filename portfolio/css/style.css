@@ -53,6 +53,9 @@ Standerd elements styling
   }
 }
 
+html {
+  overflow-x: hidden;
+}
 html, body {
   margin: 0;
   padding: 0;
@@ -95,6 +98,10 @@ a:bofore, a:after {}
 
 section:not(.quote):not(.other) {
   box-shadow: inset 0 0 25px rgba(0,0,0,.45);
+}
+
+h3, h4 {
+  border-bottom: 3px solid rgba(84, 113, 255, 1);
 }
 
 code {
@@ -283,17 +290,29 @@ main {
 /*end animate in*/
 
 .about > div {
-  float: left;
   max-width: 400px;
 }
 .about .qualities {
   font-size: 0.8em;
   padding: 0;
-  float: right;
   max-width: 400px;
 }
-ul li {
+.qualities ul {
+  padding: 0;
+}
+.qualities ul li {
   list-style-type: none;
+}
+@media screen and (min-witdh: 600px) {
+  .about {
+    flex-direction: column;
+  }
+  .qualities .progress {
+    width: 70vw;
+  }  
+  .about > div {
+    max-width: 500px;
+  }
 }
 .progress {
   width: 200px;
@@ -441,7 +460,8 @@ section.portfolio {
   box-shadow: 0px 15px 25px -4px rgba(0, 0, 0, 0.5);
 }
 .item-container .text-container h3 {
-  text-shadow: 2px 2px 0 #000;
+  color: lightslategrey;
+  text-shadow: 1px 1px 0 #000;
 }
 .item-container:first-of-type {
   padding-top: 9em;
@@ -498,25 +518,29 @@ section.portfolio {
   transform: rotateY(0);
 }
 
-@media screen and (max-width: 600) {
+@media screen and (max-width: 600px) {
+  .item-container {
+    display: flex;
+    flex-direction: column;
+    grid-template-columns: none;
+    grid-template-rows: none;
+    align-items: center;
+    justify-content: center;
+  }
   div.item-container {
     margin: 3em 0;
-  }
-  div.item-container{
     padding-left: 0;
   }
   div.item-container .text-container {
     padding-left: 0;
     padding-right: 0;
   }
-  div.img-container, div.item-container .text-container {
-  }   
-  div.item-container {
-    display: block;
+  .text-container {
+    max-width: 70vw;
   }
-  div.item-container div.img-container {
-    display: block;
-  } 
+  .img-container img {
+    height: 40vw;
+  }
 }
 /********
  Alt portfolio styling
@@ -862,7 +886,8 @@ footer .tooltip .tooltip-text::after {
  contact styling
  *******/
 .form-container {
-  display: none;  
+  display: flex;
+  visibility: hidden;  
   width: 100vw;
   height: 100vh;
   position: absolute;
@@ -870,28 +895,33 @@ footer .tooltip .tooltip-text::after {
   left: 0;
   z-index: 200;
   background: rgba(16, 16, 16, 0.8);
-  /* display: flex; */
   align-items: center;
   justify-content: center;
   opacity: 0;
+  transform: scale(1.2);
   transition: all .5s ease-in;
 }
 .form-container form {
+  position: relative;
   max-width: 800px;
   max-height: 800px;
-  /* width: 100%; */
+  padding: 10px;
   display: flex;
   flex-direction: column;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 0 5px 4px white;
+}
+.form-inner-container {
 }
 input {
   padding: .2em;
-  border-radius: 3px;
-  border: 1px solid grey;
-  border-bottom: none;
+  border: none;
+  border-bottom: 1px solid #c3c3c3;
 }
 textarea {
-  border-bottom: none;
-  border-radius: 3px;
+  border: none;
+  background-color: rgba(239, 239, 239, 0.48);
   height: 10em;
 }
 input[type="submit"] {
@@ -899,7 +929,15 @@ input[type="submit"] {
   background-color: rgba(84, 113, 255, 1);
   color: white;
 }
+span.close-form {
+  position: absolute;
+  font-size: 2em;
+  right: -.7em;
+  color: white;
+  cursor: pointer;
+}
 .show {
-  display: flex;
+  visibility: visible;
   opacity: 1;
+  transform: scale(1);
 }

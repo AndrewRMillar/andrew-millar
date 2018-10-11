@@ -47,12 +47,8 @@
 <!--  
 TODO: Make site responsive
 TODO: Add assesibility features to the website
-TODO: Fill the footer with meaningfull content
-TODO: When reaching the footer have the rest of the page fade 
-      away and only show the footer with the footer content 
 TODO: Make the site more responsive to scroling, animate elements 
       of the page depenging on the scroling height 
-
 -->
 
   <header id="top">
@@ -71,7 +67,8 @@ TODO: Make the site more responsive to scroling, animate elements
           <span class="tooltip-bottom">Github</span></li>
         <li><a href="https://codepen.io/Sl4rtyb4rtf4st/" class="tooltip"><i class="fab fa-codepen"></i><!-- Codepen --></a>
           <span class="tooltip-bottom">Codepen</span></li>
-        <li><a href="contact" class="tooltip"><i class="far fa-envelope"></i><!-- Contact --></a> <span class="tooltip-bottom">Contact</span></li>
+        <li><a class="contact tooltip"><i class="far fa-envelope"></i></a> 
+          <span class="tooltip-bottom">Contact</span></li>
       </ul>
     </div>
   </header>
@@ -84,22 +81,23 @@ TODO: Make the site more responsive to scroling, animate elements
       <div>
         <h3>About me</h3>
         <p>
-          I have to push the pram a lot. Look, my liege! The Lady of the Lake, her arm clad 
-          in the purest shimmering samite, held aloft Excalibur from the bosom of the water, 
-          signifying by divine providence that I, Arthur, was to carry Excalibur. That is why 
-          I am your king.
+          Ik ben een bioloog die en-route de weg is vergeten naar het lab. Na jaren van hobbyen 
+          op mezelf heb ik besloten van mijn hobby mijn werk te maken. Via verschillende online
+          bronnen en cursussen zowel betaald als gratis heb ik mij in meer of mindere mate bekwaamd 
+          in html, css, python, javascript, meteor, ReactJS, VueJS, Bootstrap, handlebars.js. 
+          Evengoed ben ik bekend met scrum en agile.
         </p>
         <p>
-          Listen. Strange women lying in ponds distributing swords is no basis for a system of 
-          government. Supreme executive power derives from a mandate from the masses, not from 
-          some farcical aquatic ceremony. Well, how'd you become king, then? <a href="http://fillerama.io/">fillerama</a>
-          </p>
+          Ik ben analytisch, gestructureerd en systematisch. Ik ben in staat mij nieuwe kennis 
+          snel eigen te maken. Daarnaast kan ik goed samenwerken met collega's maar mijn evengoed 
+          een uren in solitude vastbijten op een probleem.
+        </p>
       </div>
       <div class="qualities">
         <!-- 
           I should actually be using the meter element here, is supported by the major 
           browsers, it should be recognised by modernizer for not supporting browsers
-          Meter needs a shit ton of styling: https://css-tricks.com/html5-meter-element/
+          Meter needs a shit ton of styling though: https://css-tricks.com/html5-meter-element/
         -->
         <ul>
           <li>
@@ -167,9 +165,9 @@ TODO: Make the site more responsive to scroling, animate elements
       </div>
     </section>
 
-    <section class="portfolio-car">
-      <!-- <span class="lastt"><i class="fas fa-angle-left"></i></span>
-      <span class="nextt"><i class="fas fa-angle-right"></i></span> -->
+    <section class="portfolio-car" id="portfolio">
+      <span class="last"><i class="fas fa-angle-up"></i></span>
+      <span class="next"><i class="fas fa-angle-down"></i></span>
       
       <div class="carousel-con" id="carousel-con">
         <!--  Second name of the classname needs to be the order of the item  -->
@@ -249,7 +247,7 @@ TODO: Make the site more responsive to scroling, animate elements
     </section>
   </main>
 
-  <footer>
+  <footer id="footer">
     <div class="clip-path1"></div>
     <div class="clip-path2"></div>
     <div class="content">
@@ -257,7 +255,7 @@ TODO: Make the site more responsive to scroling, animate elements
         Ik ben open voor web geralateerde projecten, het bouwen van 
         een website, of voor werk in loondienst. Je kan contact met 
         me opnemen voor meer informatie of gewoon een praatje via het 
-        contact formulier of vie twitter.
+        contact formulier of via twitter.
       </p>
     </div>  
     <div class="totop">
@@ -279,7 +277,7 @@ TODO: Make the site more responsive to scroling, animate elements
           <!-- <span class="tooltip-text">Codepen</span> -->
         </li>
         <li>
-          <a href="https://www.twitter.com/AndrewRMillar" title="twitter">
+          <a href="https://www.twitter.com/AndrewRMillar" class="tooltip" title="twitter">
             <i class="fab fa-twitter"></i>
             <span>Twitter</span>
           </a>
@@ -304,11 +302,11 @@ TODO: Make the site more responsive to scroling, animate elements
   </footer>
   <!-- Contact modal -->
   <div class="form-container">
-    <span class="close-form">&times;</span>
     <form action="" method="post">
+      <span class="close-form">&times;</span>
       <input type="text" placeholder="Naam" name="naam" title="naam" id="naam" autofocus required>
       <input type="email" placeholder="email@domein.nl" pattern="[a-zA-Z-\._0-9]+@[^\.]+\.\w+" name="email" id="email" required>
-      <textarea></textarea>
+      <textarea placeholder="Bericht"></textarea>
       <input type="submit" value="Verstuur">
     </form>
   </div>

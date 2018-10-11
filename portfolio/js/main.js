@@ -1,44 +1,45 @@
-// I need to have a fallback or polyfill for arrow functions
-// (there is no polyfill). I don't really like the modernizer solution
-// Need to add the modernizer if statements other wise 
-
-
-// Paralax effect, not working so far. On the back burner
-window.addEventListener("scroll", () => {
-    // get the scroll amount and move the backgroung image by a fraction of that amount
-    // For some reason this doesn't work, moving on coming 
-
-    // let scrollFraq = window.scrollY / 4;
-    // const header = document.querySelector("header");
-    // header.style.backgoundPositionY = `0, ${scrollFraq}px`;   
-
-    if(window.innerHeight/window.scrollY < 11) {
-        document.body.classList.add("scrolled");
-    } else {
-        document.body.classList.remove("scrolled");
-    }
-});
-
-
 // TODO: When an element gets into the view of the user do something
 // node.getBoundingClientRect().top top of the element in relation to the
 
+// Site would need a fallback for arrow functions on production
+// (there is no polyfill). 
 
+// Paralax effect, not working so far. On the back burner
+window.addEventListener("scroll", () => {
+  // get the scroll amount and move the backgroung image by a fraction of that amount
+  // For some reason this doesn't work, moving on coming 
+
+  // let scrollFraq = window.scrollY / 4;
+  // const header = document.querySelector("header");
+  // header.style.backgoundPositionY = `0, ${scrollFraq}px`;   
+
+  if(window.innerHeight/window.scrollY < 11) {
+      document.body.classList.add("scrolled");
+  } else {  
+      document.body.classList.remove("scrolled");
+  }    
+});  
 
 // fetch a json file with the quotes
 // fetch polyfill: http://github.github.io/fetch/
 let quotes = {};
 const url = "https://millar-knorr.nl/quotes.json";
 
-// fetch(url, {
-//     method: "POST",
-//     mode: "no-cors"})
-// .then(response => response.json())
-// .then(data => {
-//     quotes = data;
-//     pastQuote();
-// })
-// .catch(e => console.log(e));
+// Fetch has a problem when served local, getting a CORS error
+fetch(url, {
+    method: "GET",
+    mode: "cors"})
+.then(response => {
+  if (!response.ok) {
+    throw Error(response.statusText);
+  }
+  response.json()
+})
+.then(data => {
+    quotes = data;
+    pastQuote();
+})
+.catch(e => console.log(e));
 
 function pastQuote () {
     // Select a random quote from the quotes object 
@@ -102,13 +103,18 @@ $(document).ready(function(){
 });
 
 // My own made casousel is not working for me right now, will revisit at a later date
-const contactBtn = document.querySelector(".contact");
+
+// Contact form popup
+const contactBtn = document.querySelectorAll(".contact");
 const contact = document.querySelector(".form-container");
 const closeForm = document.querySelector(".close-form"); 
 const form = document.querySelector(".form-container");
-contactBtn.addEventListener("click", () => {
-  console.log("form");
-  form.classList.add("show");
+contactBtn.forEach((el) => {
+  el.addEventListener("click", (e) => {
+    e.preventDefault();
+    document.querySelector("#top").scrollIntoView({behavior:"instant", block: "start"});
+    form.classList.add("show");
+  });
 });
 
 closeForm.addEventListener("click", () => {
