@@ -39,10 +39,14 @@ function pastQuote () {
   // Select a random quote from the quotes object 
 
   // Check if there is anything in quotes
-  if(!quotes.hasOwnProperty("quotes")) return;
+  if(!quotes.hasOwnProperty("quotes")) {return};
 
   var random = Math.floor(Math.random() * quotes.quotes.length);
-  var quote = quotes.quotes[random];
+
+  while(quotes.quotes[random] == quotes.quote) {
+    var random = Math.floor(Math.random() * quotes.quotes.length);
+  }
+  quotes.quote = quotes.quotes[random];
   document.querySelector(".quote").innerHTML = `<h2>${quote}</h2>`;
 }
 // Change the quote every so often
