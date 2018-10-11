@@ -4,19 +4,13 @@
 // Site would need a fallback for arrow functions on production
 // (there is no polyfill). 
 
-// Paralax effect, not working so far. On the back burner
 window.addEventListener("scroll", () => {
-  // get the scroll amount and move the backgroung image by a fraction of that amount
-  // For some reason this doesn't work, moving on coming 
-
-  // let scrollFraq = window.scrollY / 4;
-  // const header = document.querySelector("header");
-  // header.style.backgoundPositionY = `0, ${scrollFraq}px`;   
-
-  if(window.innerHeight/window.scrollY < 11) {
-      document.body.classList.add("scrolled");
+  if(window.scrollY > 200) {
+    document.body.classList.add("scrolled");
+  } else if (window.scroll > 550) {
+    document.body.classList.add("scrolled-more");   
   } else {  
-      document.body.classList.remove("scrolled");
+    document.body.classList.remove("scrolled");
   }    
 });  
 
@@ -27,8 +21,8 @@ const url = "https://millar-knorr.nl/quotes.json";
 
 // Fetch has a problem when served local, getting a CORS error
 fetch(url, {
-    method: "GET",
-    mode: "cors"})
+  method: "GET",
+  mode: "cors"})
 .then(response => {
   if (!response.ok) {
     throw Error(response.statusText);
@@ -36,24 +30,24 @@ fetch(url, {
   response.json()
 })
 .then(data => {
-    quotes = data;
-    pastQuote();
+  quotes = data;
+  pastQuote();
 })
 .catch(e => console.log(e));
 
 function pastQuote () {
-    // Select a random quote from the quotes object 
+  // Select a random quote from the quotes object 
 
-    // Check if there is anything in quotes
-    if(!quotes.hasOwnProperty("quotes")) return;
+  // Check if there is anything in quotes
+  if(!quotes.hasOwnProperty("quotes")) return;
 
-    var random = Math.floor(Math.random() * quotes.quotes.length);
-    var quote = quotes.quotes[random];
-    document.querySelector(".quote").innerHTML = `<h2>${quote}</h2>`;
+  var random = Math.floor(Math.random() * quotes.quotes.length);
+  var quote = quotes.quotes[random];
+  document.querySelector(".quote").innerHTML = `<h2>${quote}</h2>`;
 }
 // Change the quote every so often
 window.setInterval(() => {
-    pastQuote();
+  pastQuote();
 }, 20000);
 
 
@@ -65,32 +59,33 @@ const ids = ["top"]; // first id is not of a section but a header
 
 // Put all the section ids in the array
 section.forEach((el) => {
-    if(el.id){
-        ids.push(el.id);
-    } 
+  if(el.id){
+    ids.push(el.id);
+  } 
 });
 
 function scrollTo(el, direction) {
-    // Function takes in a DOM element adds a click event handler that when 
-    // clicked scrolls the page to the correct place in the page, an element id
-    // No return only side effects
+  // Function takes in a DOM element adds a click event handler that when 
+  // clicked scrolls the page to the correct place in the page, an element id
+  // No return only side effects
 
-    const parentId = el.parentNode.id;
-    const id = direction == "up"? `#${ids[ids.indexOf(parentId)-1]}`: `#${ids[ids.indexOf(parentId)+1]}`;
-    el.addEventListener("click", () => {
-        document.querySelector(id).scrollIntoView({behavior:"smooth", block: "start"});
-    })
+  const parentId = el.parentNode.id;
+  const id = direction == "up"? `#${ids[ids.indexOf(parentId)-1]}`: `#${ids[ids.indexOf(parentId)+1]}`;
+  el.addEventListener("click", () => {
+    document.querySelector(id).scrollIntoView({behavior:"smooth", block: "start"});
+  })
 }
 
 // Lot DRYer than it was, don't go overboard.
 last.forEach((el) => {
-    scrollTo(el, "up");
+  scrollTo(el, "up");
 });
     
 next.forEach((el) => {
-    scrollTo(el, "down");
+  scrollTo(el, "down");
 });
 
+// My own made casousel is not working for me right now, will revisit at a later date
 // Going for th easier solution right now
 $(document).ready(function(){
   $('#carousel-con').slick({
@@ -102,8 +97,7 @@ $(document).ready(function(){
   });
 });
 
-// My own made casousel is not working for me right now, will revisit at a later date
-
+// When clicking the contact link open a popup with a contact form
 // Contact form popup
 const contactBtn = document.querySelectorAll(".contact");
 const contact = document.querySelector(".form-container");
@@ -120,6 +114,3 @@ contactBtn.forEach((el) => {
 closeForm.addEventListener("click", () => {
   form.classList.remove("show");
 });
-
-
-// When clicking the contact link open a popup with a contact form
