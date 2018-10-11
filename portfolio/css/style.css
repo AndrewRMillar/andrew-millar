@@ -55,6 +55,7 @@ Standerd elements styling
 
 html {
   overflow-x: hidden;
+  width: 100vw;
 }
 html, body {
   margin: 0;
@@ -63,10 +64,7 @@ html, body {
 }
 
 h1, h2, h3, h4, H5, H6 {
-  /* font-family: 'Satisfy', cursive; */
   font-family: 'Kaushan Script', cursive;
-  /* font-family: 'Sedgwick Ave', cursive; */
-  /* font-family: 'Devonshire', cursive; */
 }
 
 a {
@@ -82,7 +80,6 @@ a:active {
 a:focus {  
   
 }
-a:visited {}
 a:hover {
   color: #FF3355;
   text-decoration: none;
@@ -101,7 +98,6 @@ p a:active {
   background-color: oldlace;
   color: #444;
 }
-a:bofore, a:after {}
 
 section:not(.quote):not(.other) {
   box-shadow: inset 0 0 25px rgba(0,0,0,.45);
@@ -120,18 +116,42 @@ code {
   padding: 0 1px;
 }
 
+/*******
+ javscript breakpoints
+ not using at the moment
+ *******/
+body:before {
+  content: "desktop";
+  display: none; 
+}
+@media (max-width: 700px) {
+  body:before {
+    content: "mobile";
+  }
+}
+@media (max-width: 1100px) {
+  body:before {
+    content: "desktop";
+  }
+}
+
 /****** 
 Animation
  ******/
 @keyframes pulse {
   0% {
     color:hsla(0, 0%, 100%, 0.95);
+    transform: translateY(3px);
   }
-  50% {
-    color:hsla(0, 0%, 100%, 0.45);
+  33%{
+    transform: translateY(0);
+  }
+  66% {
+    transform: translateY(3px)
   }
   100% {
-    color:hsla(0, 0%, 100%, 0.95);
+    transform: translateY(0);
+    color:hsla(0, 0%, 100%, 0.45);
   }
 }
 
@@ -142,6 +162,7 @@ header {
   padding-top: 8em; /*128px*/
   width: 100%;
   height: auto;
+  height: 100vh;
   /* 13 em half the image */
   background-image: linear-gradient(#5471ff 13em, #5a8cf5 13em), url("https://millar-knorr.nl/bg.jpg");
   background-image: linear-gradient(rgba(84, 113, 255, .7) 13em, rgba(90, 140, 245, .7) 13em), url(https://millar-knorr.nl/bg.jpg);
@@ -161,6 +182,8 @@ header .face img {
   border: 3px solid white;
 }
 header h1 {
+  letter-spacing: .03em;
+  padding: 2em 0;
   font-size: 2.074em;
   margin: .67em 0;
 }
@@ -179,7 +202,7 @@ header p {
 header a.button {
   color: hsl(0, 0%, 100%);
   font-size: 2em;
-  animation: pulse 2s linear infinite;
+  animation: pulse 1.5s linear alternate infinite;
 }
 .social ul {
   margin: 5em;
@@ -549,101 +572,10 @@ section.portfolio {
     height: 40vw;
   }
 }
-/********
- Alt portfolio styling
- ********/
- section.portfolio-alt {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 5em 0;
-}
-.portfolio-alt .container {
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-}
-.portfolio-alt ul {
-  width: 50vw;
-  height: 50vw;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  grid-gap: 30px;
-  grid-template-rows: 1fr 1fr;
-  grid-template-columns: 1fr 1fr;
-}
 
-.portfolio-alt li {
-  position: relative;
-  list-style-type: none;
-  width: 25vw;
-  height: 25vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  transition: all .2s;
-  border-radius: 20px;
-  border: 3px solid #a2a2a2;
-  box-shadow: inset 0 0 20px #444;
-}
-.portfolio-alt li:nth-of-type(1) {
-  transform: rotateY(7deg) rotateZ(2deg);
-}
-.portfolio-alt li:nth-of-type(1):hover {
-  transform: rotateY(-2deg) rotateZ(0deg) scale(1.1);
-}
-.portfolio-alt li:nth-of-type(2) {
-  transform: rotateY(-7deg) rotateZ(-2deg);
-}
-.portfolio-alt li:nth-of-type(2):hover {
-  transform: rotateY(2deg) rotateZ(0deg) scale(1.1);
-}
-.portfolio-alt li:nth-of-type(3) {
-  transform: rotateY(-7deg) rotateZ(-2deg);
-}
-.portfolio-alt li:nth-of-type(3):hover {
-  transform: rotateY(2deg) rotateZ(0deg) scale(1.1);
-}
-.portfolio-alt li:nth-of-type(4) {
-  transform: rotateY(-7deg) rotateZ(2deg);
-}
-.portfolio-alt li:nth-of-type(4):hover {
-  transform: rotateY(2deg) rotateZ(0deg) scale(1.1);
-}
-
-.portfolio-alt li img {
-  flex-shrink: 0;
-  min-width: 100%;
-  min-height: 100%
-}
-.portfolio-alt li span {
-  background-color: rgba(90, 140, 245, 0.8);
-  box-shadow: inset 0 0 20px 0px black;
-  position: absolute;
-  visibility: hidden;
-  width: 100%;
-  box-sizing: border-box;
-  height: 100%;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  transition: all .5s;
-  display: block;
-  padding: 1em;
-  color: white !important;
-  text-shadow: 1px 1px 2px black;
-}
-.portfolio-alt li:hover span {
-  visibility: visible;
-  opacity: 1;
-}
 
 /*******
- Portfolio alt alt
+ Portfolio carousel
  *******/
  :root {
   --height: 450px;
@@ -830,6 +762,14 @@ footer .social {
   grid-column: 1 / 2;
   grid-row: 1 / 2;
 }
+footer p a {
+  text-decoration: underline;
+  text-decoration-style: dashed;
+}
+footer p a:hover {
+  font-weight: 500;
+  text-decoration-style: solid;
+}
 footer .social ul {
   margin: 1em;
 }
@@ -893,6 +833,28 @@ footer .tooltip .tooltip-text::after {
 }
 
 @media screen and (max-width: 600px) {
+  header { 
+    padding-left: .5em;
+    padding-right: .5em;
+  }
+  header .social ul {
+    padding: 0;
+    margin: 3em;
+  }
+  header h1 {
+    padding: 0;
+  }
+  .about {
+    flex-direction: column;
+  }
+  .about > div {
+    max-width: 100vw;
+    padding: 1.5em;
+  }
+  .about .progress {
+    width: 80vw;
+  }
+
   footer {
     padding: 2em 1em 3em;
   }
@@ -909,7 +871,7 @@ footer .tooltip .tooltip-text::after {
     justify-content: center;
   }
   footer .social ul {
-    margin: 0;
+    padding: 0;
   }
   footer .social ul li {
     display: inline-block;
