@@ -1,5 +1,5 @@
 // TODO: When an element gets into the view of the user do something
-// node.getBoundingClientRect().top top of the element in relation to the
+// node.getBoundingClientRect().top top of the element in relation to the window
 
 // Site would need a fallback for arrow functions on production
 // (there is no polyfill). 
@@ -19,10 +19,10 @@ window.addEventListener("scroll", () => {
 let quotes = {};
 const url = "https://millar-knorr.nl/quotes.json";
 
-// Fetch has a problem when served local, getting a CORS error
+// Fetch has a problem when served locally, getting a CORS error
 fetch(url, {
   method: "GET",
-  mode: "cors"})
+  mode: "no-cors"})
 .then(response => {
   if (!response.ok) {
     throw Error(response.statusText);

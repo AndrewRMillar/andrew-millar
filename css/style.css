@@ -162,7 +162,7 @@ header {
   padding-top: 8em; /*128px*/
   width: 100%;
   height: auto;
-  height: 100vh;
+  min-height: 100vh;
   /* 13 em half the image */
   background-image: linear-gradient(#5471ff 13em, #5a8cf5 13em), url("https://millar-knorr.nl/bg.jpg");
   background-image: linear-gradient(rgba(84, 113, 255, .7) 13em, rgba(90, 140, 245, .7) 13em), url(https://millar-knorr.nl/bg.jpg);
@@ -183,7 +183,7 @@ header .face img {
 }
 header h1 {
   letter-spacing: .03em;
-  padding: 2em 0;
+  /* padding: 2em 0; */
   font-size: 2.074em;
   margin: .67em 0;
 }
@@ -199,13 +199,17 @@ header p {
   max-width: 500px;
   text-align: center;
 }
+header p:nth-last-of-type(2) {
+  margin-top: 0;
+}
 header a.button {
   color: hsl(0, 0%, 100%);
   font-size: 2em;
   animation: pulse 1.5s linear alternate infinite;
 }
 .social ul {
-  margin: 5em;
+  margin: 3em;
+  padding: 0;
   list-style: none;
 }
 .social li {
