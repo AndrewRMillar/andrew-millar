@@ -17,7 +17,7 @@ window.addEventListener("scroll", () => {
 // fetch a json file with the quotes
 // fetch polyfill: http://github.github.io/fetch/
 let quotes = {};
-const url = "https://millar-knorr.nl/quotes.json";
+const url = "quotes.json";
 
 // Fetch has a problem when served locally, getting a CORS error
 fetch(url, {
