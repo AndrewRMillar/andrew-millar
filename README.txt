@@ -4,6 +4,6 @@ Based on a Pen I created at CodePen.io. https://codepen.io/andrewRmillar/pen/LJJ
 
 The portfolio is still under construction but there is a live version [here][lk1]
 
-[lk1]:<http://andrew-millar.nl/demo/portfolio>
+    [lk1]:<http://andrew-millar.nl/demo/portfolio>
 
  
