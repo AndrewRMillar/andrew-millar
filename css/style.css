@@ -303,7 +303,7 @@ main {
 }
 
 /*animate in*/
-.about > div h3, .about > div p {
+/* .about > div h3, .about > div p {
   opacity: .3;
   transform: translateX(-35px);
   transition: transform 1s, opacity .25s;
@@ -320,7 +320,7 @@ main {
 .scrolled .qualities {
   opacity: 1;
   transform: translateX(0);
-}
+} */
 /*end animate in*/
 
 .about > div {
@@ -383,22 +383,22 @@ main {
   transition: width 1.5s ease;
 }
 /* increase the progress barrs */
-.scrolled li:nth-of-type(1) .progress-bar {
+.animatedIn li:nth-of-type(1) .progress-bar {
   width: 75%;
 }
-.scrolled li:nth-of-type(2) .progress-bar {
+.animatedIn li:nth-of-type(2) .progress-bar {
   width: 70%;
 }
-.scrolled li:nth-of-type(3) .progress-bar {
+.animatedIn li:nth-of-type(3) .progress-bar {
   width: 60%;
 }
-.scrolled li:nth-of-type(4) .progress-bar {
+.animatedIn li:nth-of-type(4) .progress-bar {
   width: 30%;
 }
-.scrolled li:nth-of-type(5) .progress-bar {
+.animatedIn li:nth-of-type(5) .progress-bar {
   width: 10%;
 }
-.scrolled li:nth-of-type(6) .progress-bar {
+.animatedIn li:nth-of-type(6) .progress-bar {
   width: 20%;
 }
 
@@ -700,11 +700,6 @@ section.portfolio {
   padding-top: 2em;
   margin: 2em auto;
 }
-.portfolio-car .text-container {}
-.portfolio-car .img-container {}
-
-
-
 
 /******
  optional styles
@@ -944,6 +939,7 @@ footer .tooltip .tooltip-text::after {
   transform: scale(1.2);
   transition: all .5s ease-in;
 }
+
 .form-container form {
   position: relative;
   max-width: 800px;
@@ -955,8 +951,7 @@ footer .tooltip .tooltip-text::after {
   border-radius: 5px;
   box-shadow: 0 0 5px 4px white;
 }
-.form-inner-container {
-}
+
 input {
   padding: .2em;
   border: none;
@@ -983,4 +978,20 @@ span.close-form {
   visibility: visible;
   opacity: 1;
   transform: scale(1);
+}
+
+/******
+ Animate in elements
+ ******/
+.animateIn.right, .animateIn.left {
+  transform: translateX(200px);
+  opacity: .1;
+  transition: all .5s;
+}
+.animateIn.left {
+  transform: translateX(-200px);
+}
+.animatedIn {
+  transform: translateX(0) !important;
+  opacity: 1 !important;
 }

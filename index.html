@@ -58,7 +58,8 @@ TODO: Make the site more responsive to scroling, animate elements
     <h1>Andrew Millar</h1>
     <h2>Webdevelopment</h2>
     <p>
-      Ik vind webontwikkeling supper kek, bla die blah Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore similique, debitis eligendi voluptate dolor nisi dicta ipsum veritatis, hic quos sed quia. Maiores porro corporis tempora numquam asperiores reprehenderit officia?
+      Welkom op mijn portfolio website. Hier heb ik een aantal voorbeelden van wat ik kan. Ik doe mijn best 
+      om de rojecten op deze website up to date te houden met waar ik mee bezig ben. 
     </p>
     <a class="next button"><i class="far fa-arrow-alt-circle-down"></i></a>
     <div class="social">
@@ -78,7 +79,7 @@ TODO: Make the site more responsive to scroling, animate elements
       <!-- add some kind of patern to the background -->
       <a class="next"><i class="fas fa-angle-down"></i></a>
       <a class="last"><i class="fas fa-angle-up"></i></a>
-      <div>
+      <div class="animateIn left">
         <h3>About me</h3>
         <p>
           Ik ben een bioloog die en-route de weg is vergeten naar het lab. Na jaren van hobbyen 
@@ -93,7 +94,7 @@ TODO: Make the site more responsive to scroling, animate elements
           uren op mezelf vastbijten in een probleem.
         </p>
       </div>
-      <div class="qualities">
+      <div class="qualities animateIn right">
         <!-- 
           I should actually be using the meter element here, is supported by the major 
           browsers, it should be recognised by modernizer for not supporting browsers but
@@ -177,7 +178,7 @@ TODO: Make the site more responsive to scroling, animate elements
       <span class="last"><i class="fas fa-angle-up"></i></span>
       <span class="next"><i class="fas fa-angle-down"></i></span>
       
-      <div class="carousel-con" id="carousel-con">
+      <div class="carousel-con animateIn" id="carousel-con">
         <!--  Second name of the classname needs to be the order of the item  -->
         <div>
           <div class="item-container">
@@ -258,7 +259,7 @@ TODO: Make the site more responsive to scroling, animate elements
   <footer id="footer">
     <div class="clip-path1"></div>
     <div class="clip-path2"></div>
-    <div class="content">
+    <div class="content animateIn left">
       <p>
         Ik ben open voor web geralateerde projecten, het bouwen van 
         een website, of voor werk in loondienst. Je kan contact met 
@@ -269,7 +270,7 @@ TODO: Make the site more responsive to scroling, animate elements
     <div class="totop">
       <a href="#top"></a>
     </div>
-    <div class="social">
+    <div class="social animateIn right">
       <ul>
         <li>
           <a href="https://github.com/Sl4rtyb4rtf4st" class="tooltip" title="Github">
@@ -344,9 +345,11 @@ TODO: Make the site more responsive to scroling, animate elements
   <script type="text/javascript" src="./js/slick.min.js"></script>
   <!-- end carousel -->
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
   <script src="js/modernizer.js"></script>
   <script src="js/smoothscroll-polifill.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/inviewport.js"></script>
   <script>
     var b = document.documentElement;
         b.setAttribute('data-useragent',  navigator.userAgent);
