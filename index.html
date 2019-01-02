@@ -39,7 +39,7 @@
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.3.1/css/all.css'>
-  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light+Two" rel="stylesheet">  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -50,7 +50,9 @@ TODO: Add assesibility features to the website
 TODO: Make the site more responsive to scroling, animate elements 
       of the page depenging on the scroling height 
 -->
+  <nav class="sticky-top-bar nav">
 
+  </nav>
   <header id="top">
     <div class="face">
       <img src="https://millar-knorr.nl/face.png" alt="My Face">
@@ -64,11 +66,11 @@ TODO: Make the site more responsive to scroling, animate elements
     <a class="next button"><i class="far fa-arrow-alt-circle-down"></i></a>
     <div class="social">
       <ul>
-        <li><a href="https://github.com/Sl4rtyb4rtf4st" class="tooltip"><i class="fab fa-github"></i><!-- Github --></a>
+        <li class="animateIn left"><a href="https://github.com/Sl4rtyb4rtf4st" class="tooltip"><i class="fab fa-github"></i><!-- Github --></a>
           <span class="tooltip-bottom">Github</span></li>
-        <li><a href="https://codepen.io/Sl4rtyb4rtf4st/" class="tooltip"><i class="fab fa-codepen"></i><!-- Codepen --></a>
+        <li class="animateIn bottom"><a href="https://codepen.io/Sl4rtyb4rtf4st/" class="tooltip"><i class="fab fa-codepen"></i><!-- Codepen --></a>
           <span class="tooltip-bottom">Codepen</span></li>
-        <li><a href="#contact" class="contact tooltip"><i class="far fa-envelope"></i></a> 
+        <li class="animateIn right"><a href="#contact" class="contact tooltip"><i class="far fa-envelope"></i></a> 
           <span class="tooltip-bottom">Contact</span></li>
       </ul>
     </div>
@@ -179,7 +181,7 @@ TODO: Make the site more responsive to scroling, animate elements
       <span class="last"><i class="fas fa-angle-up"></i></span>
       <span class="next"><i class="fas fa-angle-down"></i></span>
       
-      <div class="carousel-con animateIn" id="carousel-con">
+      <div class="carousel-con animateIn left" id="carousel-con">
         <!--  Second name of the classname needs to be the order of the item  -->
         <div>
           <div class="item-container">
@@ -271,35 +273,35 @@ TODO: Make the site more responsive to scroling, animate elements
     <div class="totop">
       <a href="#top"></a>
     </div>
-    <div class="social animateIn right">
+    <div class="social">
       <ul>
-        <li>
+        <li class="animateIn right">
           <a href="https://github.com/Sl4rtyb4rtf4st" class="tooltip" title="Github">
             <i class="fab fa-github"></i>
             <span>Github</span><!-- Github -->
           </a>
           <!-- <span class="tooltip-text">Github</span></li> -->
-        <li>
+        <li class="animateIn right">
           <a href="https://codepen.io/Sl4rtyb4rtf4st/" class="tooltip" title="Codepen">
             <i class="fab fa-codepen"></i><!-- Codepen -->
             <span>CodePen</span>
           </a>
           <!-- <span class="tooltip-text">Codepen</span> -->
         </li>
-        <li>
-          <a href="https://www.twitter.com/AndrewRMillar" class="tooltip" title="twitter">
+        <li class="animateIn right">
+          <a href="https://www.twitter.com/AndrewRMillar" class="tooltip" title="Twitter">
             <i class="fab fa-twitter"></i>
             <span>Twitter</span>
           </a>
         </li>
-        <li>
+        <li class="animateIn right">
           <a href="https://www.linkedin.com/in/armillar/" class="tooltip" title="LinkedIn">
             <i class="fab fa-linkedin"></i>
             <span>LinkedIn</span>
           </a>
           <!-- <span class="tooltip-text">LinkedIn</span> -->
         </li>
-        <li>
+        <li class="animateIn right">
           <a href="#contact" class="contact tooltip" title="Contact">
             <i class="far fa-envelope"></i><!-- Contact -->
             <span>Contact</span>

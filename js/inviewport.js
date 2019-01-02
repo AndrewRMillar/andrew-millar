@@ -12,18 +12,40 @@ function isAnyPartOfElementInViewport(el) {
     return (vertInView && horInView);
 }
 
+function animateStickyBar() {
+    const face = document.getElementsByClassName('face')[0];
+    const rect = face.getBoundingClientRect().top;
+    let ratio = (face.offsetTop - window.pageYOffset)/face.offsetTop;
+        ratio = ratio > 0? ratio: 0;
+    const scale = 0.5 + (0.5 * ratio);
+    let translate = -((45 / face.offsetTop) * window.pageYOffset);
+    translate = translate > -45? translate: -45;
+    // console.log(scale, translate);
+
+    face.style.transform = `scale(${scale}) translateX(${translate}vw)`;
+
+    if (face.getBoundingClientRect().top < 3) {
+        document.body.classList.add('face-at-top');
+    } else {
+        document.body.classList.remove('face-at-top');
+    }
+}
+
 window.addEventListener("scroll", () => {
     const animate = Array.from(document.getElementsByClassName('animateIn'));
-    // console.log(animate[0]);
+
+    animateStickyBar();
+
+    console.log(document.getElementsByTagName('h1')[0].getBoundingClientRect().top);
+    
     
     animate.forEach(el => {
-        // console.log(isAnyPartOfElementInViewport(el));
         if(isAnyPartOfElementInViewport(el)) {
-            // console.log(el);           
             el.classList.add('animatedIn');
         } else {
             // console.log(`${el} in not in view`);
-            
         }
     });
 });  
+
+
