@@ -62,6 +62,9 @@ html, body {
   padding: 0;
   font-size: 16px; /*Every em is 16 px */
 }
+body {
+  z-index: 10;
+}
 
 h1, h2, h3, h4, H5, H6 {
   font-family: 'Shadows Into Light Two', cursive;
@@ -183,6 +186,9 @@ header .face img {
   border: 3px solid white;
   z-index: 1000;
 }
+header .face {
+  z-index: 1000;
+}
 /* color of the top half of the heading: #4358bc */
 .sticky-top-bar {
   display: none;
@@ -202,7 +208,7 @@ header .face img {
 .face-at-top .sticky-top-bar {
   display: block;
   opacity: 1;
-  z-index: 0;
+  z-index: 15;
 }
 .face-at-top header .face {
   position: fixed;

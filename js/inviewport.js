@@ -1,4 +1,3 @@
-
 function isAnyPartOfElementInViewport(el) {
     // Return true if any part of el is in the viewport
     
@@ -12,9 +11,10 @@ function isAnyPartOfElementInViewport(el) {
     return (vertInView && horInView);
 }
 
-function animateStickyBar() {
-    const face = document.getElementsByClassName('face')[0];
-    const rect = face.getBoundingClientRect().top;
+let toTop;
+
+function animateStickyBar(face) {
+    // const rect = face.getBoundingClientRect().top;
     let ratio = (face.offsetTop - window.pageYOffset)/face.offsetTop;
         ratio = ratio > 0? ratio: 0;
     const scale = 0.5 + (0.5 * ratio);
@@ -23,23 +23,29 @@ function animateStickyBar() {
     // console.log(scale, translate);
 
     face.style.transform = `scale(${scale}) translateX(${translate}vw)`;
-
-    if (face.getBoundingClientRect().top < 3) {
-        document.body.classList.add('face-at-top');
-    } else {
-        document.body.classList.remove('face-at-top');
-    }
 }
 
 window.addEventListener("scroll", () => {
     const animate = Array.from(document.getElementsByClassName('animateIn'));
+    const face = document.getElementsByClassName('face')[0];
 
-    animateStickyBar();
+    // If the face element reaches the top of the page and has not been there yet
+    if (face.getBoundingClientRect().top < 3 && !toTop) {
+        document.body.classList.add('face-at-top');
+        // toTop = !!toTop ? console.log('truethy') : console.log('falsy');
+        toTop = !!toTop ? toTop : window.pageYOffset;
+        console.log('if', toTop);
+    } else if(window.pageYOffset < toTop) {
+        console.log('else if', toTop);
+        document.body.classList.remove('face-at-top');
+        toTop = null;
+        animateStickyBar(face);
+    } else {
+        console.log('else');
+        // animateStickyBar(face);
+    }
 
-    console.log(document.getElementsByTagName('h1')[0].getBoundingClientRect().top);
-    
-    
-    animate.forEach(el => {
+        animate.forEach(el => {
         if(isAnyPartOfElementInViewport(el)) {
             el.classList.add('animatedIn');
         } else {
