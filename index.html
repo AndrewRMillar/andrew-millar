@@ -34,6 +34,8 @@
   <meta name="msapplication-TileImage" content="/mstile-144x144.png">
   <meta name="theme-color" content="#ffffff">
 
+  <!-- Bootstrap, kill me now-->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <!-- For the carousel wil revisit my own implementation at a later date -->
   <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 
@@ -324,29 +326,49 @@ TODO: Make the site more responsive to scroling, animate elements
   </div>
 
   <!-- >IE10 -->
-  <div class="ie10up" aria-hidden="true">
-    <span class="close" onclick="closeIePopup()">✕</span>
-    <p>Deze site werkt het beste met een moderne browser, probeer een van de volgende:</p>
-    <ol>
-      <li>
-        <a href="https://www.google.com/chrome/">Google Chrome</a>
-      </li>
-      <li>
-        <a href="https://www.mozilla.org/en-US/firefox/new/">Mozilla Firefox</a>
-      </li>
-      <li>
-        <a href="https://www.opera.com/">Opera</a>
-      </li>
-      <li>
-        <a href="https://www.microsoft.com/en-us/windows/microsoft-edge">Edge</a>
-      </li>
-    </ol>
+  <div class="modal" tabindex="-1" role="dialog" id="ie-modal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content" style="border-radius:0;">
+        <div class="modal-header">
+          <h5 class="modal-title" style="font-family:monospace">Internet Explorer is echt een heel slechte browser</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Deze site werkt het beste met een moderne browser, probeer &egrave;&egrave;n van de volgende:</p>
+          <ol>
+            <li data-browser="chrome">
+              <a href="https://www.google.com/chrome/">Google Chrome</a>
+            </li>
+            <li data-browser="moz">
+              <a href="https://www.mozilla.org/en-US/firefox/new/">Mozilla Firefox</a>
+            </li>
+            <li data-browser="op">
+              <a href="https://www.opera.com/">Opera</a>
+            </li>
+            <li data-browser="edge">
+              <a href="https://www.microsoft.com/en-us/windows/microsoft-edge">Edge</a>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
   </div>
+
   <!-- For the carousel -->
   <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
   <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <script type="text/javascript" src="./js/slick.min.js"></script>
   <!-- end carousel -->
+
+  <!-- For ie: -->
+  <script>
+    if ($.browser.msie && $.browser.version === 10) {
+      $("#ie-modal").modal('toggle');
+    }
+  </script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
   <script src="js/modernizer.js"></script>

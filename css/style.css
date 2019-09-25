@@ -29,9 +29,27 @@ Standerd elements styling
   box-sizing: border-box;
 }
 
-/* Show a popup for older browsers (>IE10, not even going to bother with < IE10) */
-.ie10up{
-  display: none;
+/** 
+ * Show a popup for older browsers, using a bootstrap modal now fack it 
+ * (>IE10, not even going to bother with < IE10) 
+ */
+
+.modal-body ol li[data-browser="chrome"] {
+  list-style-image: url("../img/chrome-icon-small.png");
+}
+
+.modal-body ol li[data-browser="moz"] {
+  list-style-image: url("../img/firefox-icon-small.png");
+}
+
+.modal-body ol li[data-browser="op"] {
+  list-style-image: url("../img/opera-icon-small.png");
+}
+.modal-body ol li[data-browser="edge"] {
+  list-style-image: url("../img/edge-icon-small.png");
+}
+.modal-body ol li a {
+  vertical-align: top;
 }
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
   .ie10up{

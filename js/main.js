@@ -7,15 +7,15 @@
 let quotes = {};
 
 // Switched to axios
-axios.get('http://andrew-millar.nl/php/getQuote.php')
-.then((quote) => {
-  console.log(quote);
-})
-.catch(e => {
-  console.log(`error: ${e}`);
-});
+// axios.get('http://andrew-millar.nl/php/getQuote.php')
+// .then((quote) => {
+//   console.log(quote);
+// })
+// .catch(e => {
+//   console.log(`error: ${e}`);
+// });
 
-// function pastQuote () {
+// function pasteQuote () {
 //   // Select a random quote from the quotes object 
 
 //   // Check if there is anything in quotes
@@ -88,7 +88,7 @@ $(document).ready(function(){
   contactBtn.forEach((el) => {
     el.addEventListener("click", (e) => {
       e.preventDefault();
-      document.querySelector("#top").scrollIntoView({behavior:"instant", block: "start"});
+      document.querySelector("#top").scrollIntoV  w({behavior:"instant", block: "start"});
       form.classList.add("show");
     });
   });
